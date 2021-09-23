@@ -1,0 +1,60 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+$ngsbPrimary: #9620db;
+$ngsbPrimary2: #6a0778;
+$ngsbSecondary: #ffa300;
+$ngsbWhite: #ffffff;
+$ngsbOffWhite: #e0e0e0;
+$ngsbBlack: #000000;
+$ngsbBlack2: #1b1b1e;
+$ngsbGrey: #5b5b65;
+$ngsbGrey2: #5A5A5A;
+$ngsbGrey3: #3f3d56;
+$ngsbGrey4: #67658f;
+$ngsbValid: #a6d555;
+$ngsbError: #ff0600;
+$ngsbAccentRed: #ff6584;
+$ngsbAccentGreen: #92ce2a;
+$ngsbBlue: #3f92ff;
+$ngsbBlue2: #4285f4;
+$ngsbFooterLinks: #9B51E0;
+
+html,
+body {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  height: 100%;
+  margin: 0;
+}
+
+//ngsb Button
+button {
+  background-color: $ngsbBlue2;
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+  color: $ngsbWhite;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+//Input Field Styles
+.mat-form-field-required-marker {
+  color: $ngsbAccentRed !important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: $ngsbBlue !important;
+}
+
+.mat-form-field-underline {
+  height: 1px !important;
+  //width: 100% !important;
+}
+
+.mat-form-field {
+  font-size: 16px !important;
+}

@@ -1,0 +1,21 @@
+@import "src/styles";
+
+.int-input {
+  margin-top: 50px;
+}
+
+.inputs {
+  margin-left: 20px;
+}
+
+.buttons {
+  display: flex;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.button {
+  padding: 10px;
+}

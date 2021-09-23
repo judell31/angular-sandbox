@@ -1,0 +1,17 @@
+@import "src/styles";
+
+.footer {
+  background-color: $ngsbBlue;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  //left: 0;
+  color: $ngsbWhite;
+  justify-content: space-evenly;
+  font-weight: bold;
+}
+
+.copy-year {
+  padding: 10px;
+}

@@ -1,0 +1,43 @@
+<div class="inputs">
+  <h3>Numbers Only and Max Length 10</h3>
+  <div>
+    <mat-form-field>
+      <label>
+        <input
+          autocomplete="off"
+          [maxLength]="10"
+          numbersOnly
+          matInput
+          placeholder="Phone Number">
+      </label>
+      <!--    <mat-icon matSuffix>email</mat-icon>-->
+    </mat-form-field>
+  </div>
+
+  <h3>Material Form</h3>
+  <form [formGroup]="inputFormGroup">
+    <mat-form-field>
+      <label>
+        <input
+          autocomplete="off"
+          matInput
+          placeholder="Email"
+          required
+          formControlName="email">
+      </label>
+      <!--    <mat-icon matSuffix>email</mat-icon>-->
+    </mat-form-field>
+    <!--  Todo: Figure out how to make buttons same width  -->
+    <div class="buttons">
+      <div class="button">
+        <button (click)="submit()" type="button">Submit</button>
+      </div>
+      <div class="button">
+        <button type="button" (click)="reset()">Reset</button>
+      </div>
+    </div>
+  </form>
+  <div>
+    <h3>Drag and Drop</h3>
+  </div>
+</div>
