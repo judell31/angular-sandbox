@@ -14,6 +14,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { FormSubmittedComponent } from './dialogs/success/form-submitted/form-submitted.component';
+import { PgButtonComponent } from './uitk/pg-button/pg-button.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FormSubmittedComponent } from './dialogs/success/form-submitted/form-su
     HomeComponent,
     SidenavComponent,
     FormSubmittedComponent,
+    PgButtonComponent,
   ],
   imports: [
     BrowserModule,

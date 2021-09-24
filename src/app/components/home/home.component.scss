@@ -13,6 +13,10 @@
   width: 100%;
 }
 
+.disabled {
+  background-color: $ngsbGrey;
+}
+
 .buttons {
   display: flex;
   width: 10%;

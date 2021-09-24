@@ -1,0 +1,5 @@
+<button [ngClass]="{'primary-btn': btnEnabled, 'inactive-btn':!btnEnabled}" (click)="onClick($event)"
+        [disabled]="!btnEnabled">
+  <span [ngStyle]="{ top: rippleTop, left: rippleLeft }"></span>
+  {{ buttonLabel }}
+</button>
