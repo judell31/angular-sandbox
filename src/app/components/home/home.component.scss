@@ -19,7 +19,7 @@
 
 .buttons {
   display: flex;
-  width: 10%;
+  width: 15%;
 }
 
 button:hover {
@@ -29,4 +29,10 @@ button:hover {
 button {
   width: 100%;
   margin-right: 10px;
+}
+
+@media (max-width: 900px) {
+  .buttons {
+    width: 50%;
+  }
 }
