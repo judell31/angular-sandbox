@@ -7,7 +7,7 @@ import {MatSidenav} from '@angular/material/sidenav';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  @Output() sidenavToggle = new EventEmitter<void>();
+  @Output() sideNavToggle = new EventEmitter<void>();
 
   constructor() { }
 
@@ -15,6 +15,6 @@ export class NavComponent implements OnInit {
   }
 
   onToggleSidenav() {
-    this.sidenavToggle.emit();
+    this.sideNavToggle.emit();
   }
 }

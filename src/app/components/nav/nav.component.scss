@@ -10,6 +10,20 @@
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+  color: $ngsbWhite;
+}
+
+.nav-item:hover {
+  //color: $ngsbBlue2;
+  background-color: $ngsbBlue2;
+}
+
+.nav-item.active {
+  background-color: $ngsbBlue2;
+}
+
 .nav {
   display: flex;
   justify-content: space-around;

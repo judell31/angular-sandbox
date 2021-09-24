@@ -1,3 +1,13 @@
-a:active {
-  color: lightgray;
+@import "src/styles";
+
+.sidenav-item.active {
+  background-color: $ngsbBlue2;
+}
+
+.icon.active {
+  color: white;
+}
+
+.nav-caption.active {
+  color: white;
 }
