@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { FormSubmittedComponent } from './dialogs/success/form-submitted/form-submitted.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     FooterComponent,
     HomeComponent,
     SidenavComponent,
+    FormSubmittedComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,10 @@
   font-size: 20px;
 }
 
+.brand-name:hover {
+  cursor: pointer;
+}
+
 .nav {
   display: flex;
   justify-content: space-around;
@@ -24,14 +28,15 @@
   align-items: center;
 }
 
+.sidenav-button {
+  display: flex;
+  align-items: center;
+}
+
 .nav-item:hover {
   cursor: pointer;
 }
 
 .nav-item {
   padding: 20px;
-}
-
-@media (max-width: 900px) {
-
 }

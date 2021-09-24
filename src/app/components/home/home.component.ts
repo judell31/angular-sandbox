@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {InvalidFormComponent} from '../../dialogs/errors/invalid-form/invalid-form.component';
+import {FormSubmittedComponent} from "../../dialogs/success/form-submitted/form-submitted.component";
 
 @Component({
   selector: 'home-page',
@@ -34,8 +35,11 @@ export class HomeComponent implements OnInit {
     if (this.inputFormGroup.valid) {
       console.log(this.inputFormGroup.value);
       this.reset();
+      this.dialog.open(FormSubmittedComponent)
     }
-    this.dialog.open(InvalidFormComponent)
+    else {
+      this.dialog.open(InvalidFormComponent)
+    }
   }
 
 }

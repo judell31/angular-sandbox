@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {MatSidenav} from '@angular/material/sidenav';
 
 @Component({
@@ -7,11 +7,14 @@ import {MatSidenav} from '@angular/material/sidenav';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  @ViewChild(MatSidenav)
-  sidenav!: MatSidenav;
+  @Output() sidenavToggle = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onToggleSidenav() {
+    this.sidenavToggle.emit();
   }
 }

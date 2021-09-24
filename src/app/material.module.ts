@@ -13,6 +13,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatListModule} from "@angular/material/list";
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
   imports: [
@@ -21,11 +23,13 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatProgressSpinnerModule,
     MatSidenavModule,
     MatInputModule,
+    MatListModule,
     MatDialogModule,
     MatFormFieldModule,
     MatSelectModule,
     MatRadioModule,
     MatDatepickerModule,
+    MatToolbarModule,
     MatTooltipModule,
     MatCardModule,
     MatCheckboxModule,
@@ -42,6 +46,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatFormFieldModule,
     MatSelectModule,
     MatRadioModule,
+    MatListModule,
+    MatToolbarModule,
     MatDatepickerModule,
     MatTooltipModule,
     MatCardModule,
