@@ -1,11 +1,13 @@
 @import "src/styles";
 
+.footer-container {
+  display: flex;
+}
+
 .footer {
   background-color: $ngsbBlue;
   width: 100%;
   display: flex;
-  bottom: 0;
-  left: 0;
   color: $ngsbWhite;
   justify-content: space-evenly;
   font-weight: bold;
