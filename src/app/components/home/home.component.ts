@@ -23,12 +23,16 @@ export class HomeComponent implements OnInit {
 
   inputForm() {
     this.inputFormGroup = this.fb.group({
-      email: ['',{disabled: true}, [Validators.required]],
+      email: ['',{disabled: true}, [Validators.required, Validators.email]],
     })
   }
 
   reset() {
     this.inputFormGroup.reset();
+  }
+
+  checkRequired(controlName: string, errorName: string) {
+    return this.inputFormGroup.controls[controlName].hasError(errorName);
   }
 
   submit(){
