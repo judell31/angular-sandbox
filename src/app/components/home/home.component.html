@@ -31,6 +31,7 @@
     <div class="button-container">
       <div class="buttons">
 <!--    Todo: Change styles on global button to match the non global button    -->
+<!--    Todo: Make buttons responsive    -->
 <!--        <pg-button [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></pg-button>-->
         <button *ngIf="inputFormGroup.invalid" class="disabled" (click)="submit()" [disabled]="inputFormGroup.invalid" type="button">Submit</button>
         <button *ngIf="inputFormGroup.valid" class="enabled" (click)="submit()" [disabled]="inputFormGroup.invalid" type="button">Submit</button>
