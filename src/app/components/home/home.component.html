@@ -21,7 +21,7 @@
         <input autocomplete="off" matInput placeholder="Email" required formControlName="email">
       </label>
       <mat-error *ngIf="checkRequired('email', 'required')">Email is required</mat-error>
-      <mat-error *ngIf="checkRequired('email', 'email')">Email address is invalid</mat-error>
+      <mat-error *ngIf="checkRequired('email', 'pattern')">Email address is invalid</mat-error>
       <mat-icon matSuffix>email</mat-icon>
     </mat-form-field>
     <!--  Todo: Figure out how to make buttons same width  -->
