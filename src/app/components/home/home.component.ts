@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
 
   inputForm() {
     this.inputFormGroup = this.fb.group({
-      email: ['',{disabled: true}, [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
     })
   }
 
