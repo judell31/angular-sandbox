@@ -7,7 +7,7 @@
     </div>
     <div class="nav-items" fxHide.xs>
       <ng-container *ngFor="let navItem of navItems">
-        <a [routerLink]="[navItem.link]" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: navItem.routerLinkActiveOption}">
+        <a [routerLink]="[navItem.link]" class="nav-item" routerLinkActive="active">
           <div>{{navItem.text}}</div>
         </a>
       </ng-container>

@@ -11,6 +11,7 @@ import {FormSubmittedComponent} from "../../dialogs/success/form-submitted/form-
 })
 export class HomeComponent implements OnInit {
   inputFormGroup: FormGroup;
+  emailRegex = "[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}";
 
   constructor(
     private fb: FormBuilder,
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   inputForm() {
     this.inputFormGroup = this.fb.group({
-      email: ['', [Validators.required, Validators.pattern("[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}")]],
+      email: ['', [Validators.required, Validators.pattern(this.emailRegex)]],
     })
   }
 

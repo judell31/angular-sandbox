@@ -1,5 +1,5 @@
 <mat-nav-list>
-  <mat-list-item *ngFor="let navItem of navItems" class="sidenav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: navItem.routerLinkActiveOption}">
+  <mat-list-item *ngFor="let navItem of navItems" class="sidenav-item" routerLinkActive="active">
     <a mat-list-item [routerLink]="[navItem.link]" (click)="onClose()">
       <mat-icon class="icon" routerLinkActive="active">{{navItem.icon}}</mat-icon>
       <span class="nav-caption" routerLinkActive="active">{{navItem.text}}</span>
