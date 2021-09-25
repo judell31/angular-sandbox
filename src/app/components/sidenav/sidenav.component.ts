@@ -1,4 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {NavMenu} from "../../models/navMenu";
+import {NavItem} from "../../models/navItem";
 
 @Component({
   selector: 'app-sidenav',
@@ -8,9 +10,12 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class SidenavComponent implements OnInit {
   @Output() closeSideNav = new EventEmitter<void>();
 
-  constructor() { }
+  navItems: NavItem[];
+
+  constructor(public navMenu: NavMenu) { }
 
   ngOnInit(): void {
+    this.navItems = this.navMenu.navItems;
   }
 
   onClose() {

@@ -6,13 +6,27 @@
       </div>
     </div>
     <div class="nav-items" fxHide.xs>
-      <!--   Todo: Figure out how to work with ul li here   -->
-      <div class="nav-item" routerLinkActive="active">
-        <a routerLink="/">Home</a>
-      </div>
-      <div class="nav-item">About</div>
-      <div class="nav-item">Contact</div>
+      <ng-container *ngFor="let navItem of navItems">
+        <a [routerLink]="[navItem.link]" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: navItem.routerLinkActiveOption}">
+          <div>{{navItem.text}}</div>
+        </a>
+      </ng-container>
     </div>
+<!--    <div class="nav-items" fxHide.xs>-->
+<!--      &lt;!&ndash;   Todo: Figure out how to work with ul li here   &ndash;&gt;-->
+<!--      <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">-->
+<!--        <a routerLink="/">Home</a>-->
+<!--      </div>-->
+<!--      <div class="nav-item" routerLinkActive="active">-->
+<!--        <a routerLink="/about">About</a>-->
+<!--      </div>-->
+<!--      <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">-->
+<!--        <a routerLink="/contact">Contact</a>-->
+<!--      </div>-->
+<!--      <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">-->
+<!--        <a routerLink="/logout">Logout</a>-->
+<!--      </div>-->
+<!--    </div>-->
     <div fxHide.gt-xs class="sidenav-button-container">
       <div class="sidenav-button">
         <button (click)="onToggleSidenav()" class="sidenav-button" mat-icon-button>

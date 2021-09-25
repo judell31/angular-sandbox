@@ -15,6 +15,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { FormSubmittedComponent } from './dialogs/success/form-submitted/form-submitted.component';
 import { PgButtonComponent } from './uitk/pg-button/pg-button.component';
+import { AboutComponent } from './components/about/about.component';
+import {NavMenu} from "./models/navMenu";
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,8 @@ import { PgButtonComponent } from './uitk/pg-button/pg-button.component';
     SidenavComponent,
     FormSubmittedComponent,
     PgButtonComponent,
+    AboutComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,7 @@ import { PgButtonComponent } from './uitk/pg-button/pg-button.component';
     FlexLayoutModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [NavMenu],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

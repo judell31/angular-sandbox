@@ -1,4 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {NavItem} from "../../models/navItem";
+import {NavMenu} from "../../models/navMenu";
 
 @Component({
   selector: 'app-nav',
@@ -8,9 +10,13 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class NavComponent implements OnInit {
   @Output() sideNavToggle = new EventEmitter<void>();
 
-  constructor() { }
+  navItems: NavItem[];
+
+  constructor(public navMenu: NavMenu) { }
 
   ngOnInit(): void {
+    this.navItems = this.navMenu.navItems;
+    console.log(this.navItems)
   }
 
   onToggleSidenav() {

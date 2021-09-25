@@ -1,26 +1,37 @@
+<!--<mat-nav-list>-->
+<!--  <mat-list-item class="sidenav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">-->
+<!--    <a mat-list-item routerLink="/" (click)="onClose()">-->
+<!--      <mat-icon class="icon" routerLinkActive="active">home</mat-icon>-->
+<!--      <span class="nav-caption" routerLinkActive="active">Home</span>-->
+<!--    </a>-->
+<!--  </mat-list-item>-->
+<!--  <mat-list-item class="sidenav-item" routerLinkActive="active">-->
+<!--    <a mat-list-item routerLink="/about" (click)="onClose()">-->
+<!--      <mat-icon class="icon" routerLinkActive="active">info</mat-icon>-->
+<!--      <span class="nav-caption" routerLinkActive="active">About</span>-->
+<!--    </a>-->
+<!--  </mat-list-item>-->
+<!--  <mat-list-item class="sidenav-item" routerLinkActive="active">-->
+<!--    <a mat-list-item routerLink="/contact" (click)="onClose()">-->
+<!--      <mat-icon class="icon" routerLinkActive="active">person</mat-icon>-->
+<!--      <span class="nav-caption" routerLinkActive="active">Contact</span>-->
+<!--    </a>-->
+<!--  </mat-list-item>-->
+<!--  <mat-list-item class="sidenav-item" routerLinkActive="active">-->
+<!--    <a mat-list-item routerLink="/logout" (click)="onClose()">-->
+<!--      <mat-icon class="icon" routerLinkActive="active">logout</mat-icon>-->
+<!--      <span class="nav-caption" routerLinkActive="active">Logout</span>-->
+<!--    </a>-->
+<!--  </mat-list-item>-->
+<!--</mat-nav-list>-->
+
+<!-- Dynamic Nav -->
 <mat-nav-list>
-  <div class="sidenav-item" routerLinkActive="active">
-    <a mat-list-item routerLink="/" (click)="onClose()">
-      <mat-icon class="icon" routerLinkActive="active">home</mat-icon>
-      <span class="nav-caption" routerLinkActive="active">Home</span>
+  <mat-list-item *ngFor="let navItem of navItems" class="sidenav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: navItem.routerLinkActiveOption}">
+    <a mat-list-item [routerLink]="[navItem.link]" (click)="onClose()">
+      <mat-icon class="icon" routerLinkActive="active">{{navItem.icon}}</mat-icon>
+      <span class="nav-caption" routerLinkActive="active">{{navItem.text}}</span>
     </a>
-  </div>
-  <div class="sidenav-item" routerLinkActive="active">
-    <a mat-list-item routerLink="/login" (click)="onClose()">
-      <mat-icon>input</mat-icon>
-      <span class="nav-caption">Login</span>
-    </a>
-  </div>
-  <div class="sidenav-item" routerLinkActive="active">
-    <a mat-list-item routerLink="/training" (click)="onClose()">
-      <mat-icon>fitness_center</mat-icon>
-      <span class="nav-caption">Training</span>
-    </a>
-  </div>
-  <mat-list-item>
-    <button mat-icon-button (click)="onClose()">
-      <mat-icon>eject</mat-icon>
-      <span class="nav-caption">Logout</span>
-    </button>
   </mat-list-item>
 </mat-nav-list>
+
