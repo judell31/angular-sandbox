@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NavMenu} from "./models/navMenu";
 import {NavItem} from "./models/navItem";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,17 @@ import {NavItem} from "./models/navItem";
 })
 export class AppComponent implements OnInit {
 
-  constructor(private navMenu: NavMenu) {}
+  constructor(
+    private navMenu: NavMenu,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.buildNav();
+
+    if (this.router.url === "/") {
+      this.router.navigate(["/home"])
+    }
   }
 
   buildNav() {

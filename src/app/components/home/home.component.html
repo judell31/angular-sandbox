@@ -5,10 +5,24 @@
       <mat-form-field>
         <label>
           <input
-            type="number"
             autocomplete="off"
             [maxLength]="10"
             numbersOnly
+            matInput
+            placeholder="Phone Number">
+        </label>
+        <mat-icon matSuffix>phone_android</mat-icon>
+      </mat-form-field>
+    </div>
+    <div>
+      <div><b>Input field with tel type applied</b></div>
+      <mat-form-field>
+        <label>
+          <input
+            type="tel"
+            numbersOnly
+            autocomplete="off"
+            [maxLength]="10"
             matInput
             placeholder="Phone Number">
         </label>
