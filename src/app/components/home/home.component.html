@@ -14,32 +14,35 @@
     </mat-form-field>
   </div>
 
-  <h3>Material Form</h3>
-  <form [formGroup]="inputFormGroup">
-    <mat-form-field>
-      <label>
-        <input autocomplete="off" matInput placeholder="Email" required formControlName="email">
-      </label>
-      <mat-error *ngIf="checkRequired('email', 'required')">Email is required</mat-error>
-      <mat-error *ngIf="checkRequired('email', 'pattern')">Email address is invalid</mat-error>
-      <mat-icon matSuffix>email</mat-icon>
-    </mat-form-field>
-    <!--  Todo: Figure out how to make buttons same width  -->
-    <div class="button-container">
-      <div class="buttons">
-<!--    Todo: Change styles on global button to match the non global button    -->
-<!--        <pg-button [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></pg-button>-->
-        <ng-container *ngIf="inputFormGroup.invalid">
-          <button class="disabled" (click)="submit()" [disabled]="inputFormGroup.invalid" type="button">Submit</button>
-        </ng-container>
-        <ng-container *ngIf="inputFormGroup.valid">
-          <button class="enabled" (click)="submit()" [disabled]="inputFormGroup.invalid" type="button">Submit</button>
-        </ng-container>
-        <button type="button" (click)="reset()">Reset</button>
+  <div class="section-title">
+    <h3>Material Form</h3>
+    <form [formGroup]="inputFormGroup">
+      <mat-form-field>
+        <label>
+          <input autocomplete="off" matInput placeholder="Email" required formControlName="email">
+        </label>
+        <mat-error *ngIf="checkRequired('email', 'required')">Email is required</mat-error>
+        <mat-error *ngIf="checkRequired('email', 'pattern')">Email address is invalid</mat-error>
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+      <!--  Todo: Figure out how to make buttons same width  -->
+      <div class="button-container">
+        <div class="buttons">
+          <!--    Todo: Change styles on global button to match the non global button    -->
+          <!--        <pg-button [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></pg-button>-->
+          <ng-container *ngIf="inputFormGroup.invalid">
+            <button class="disabled" (click)="submit()" [disabled]="inputFormGroup.invalid" type="button">Submit</button>
+          </ng-container>
+          <ng-container *ngIf="inputFormGroup.valid">
+            <button class="enabled" (click)="submit()" [disabled]="inputFormGroup.invalid" type="button">Submit</button>
+          </ng-container>
+          <button type="button" (click)="reset()">Reset</button>
+        </div>
       </div>
-    </div>
-  </form>
-  <div>
+    </form>
+  </div>
+
+  <div class="section-title">
     <h3>Drag and Drop</h3>
   </div>
 </div>
