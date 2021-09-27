@@ -10,10 +10,9 @@ export class PathGuard implements CanActivate {
   ){}
 
   //Todo: not sure if i need all of the types or can use void somehow
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
     if (this.router.url === "/") {
       this.router.navigate(["/home"]).then(() => {})
     }
-    return this.router.url === "/";
   }
 }
