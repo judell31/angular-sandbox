@@ -3,10 +3,10 @@ import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
 import {AboutComponent} from "./components/about/about.component";
 import {ContactComponent} from "./components/contact/contact.component";
-import {PathGuard} from "./services/path.guard";
+import {Guard} from "./services/guard";
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', component: HomeComponent, canActivate: [PathGuard]},
+  {path: "", redirectTo: "home", pathMatch: "full"},
   { path: 'home', pathMatch: 'full', component: HomeComponent},
   { path: 'about', pathMatch: 'full', component: AboutComponent },
   { path: 'contact', pathMatch: 'full', component: ContactComponent },
@@ -18,6 +18,6 @@ const routes: Routes = [
     scrollPositionRestoration: 'top'
   })],
   exports: [RouterModule],
-  providers: [PathGuard]
+  providers: [Guard]
 })
 export class AppRoutingModule { }
