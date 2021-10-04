@@ -16,7 +16,6 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
     this.navItems = this.navMenu.navItems;
-    console.log(this.navItems)
   }
 
   onToggleSidenav() {
