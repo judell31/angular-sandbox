@@ -38,7 +38,6 @@ export class HomeComponent implements OnInit {
 
   submit(){
     if (this.inputFormGroup.valid) {
-      console.log(this.inputFormGroup.value);
       this.reset();
       this.dialog.open(FormSubmittedComponent)
     }
