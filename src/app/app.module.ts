@@ -18,6 +18,7 @@ import { PgButtonComponent } from './uitk/pg-button/pg-button.component';
 import { AboutComponent } from './components/about/about.component';
 import {NavMenu} from "./models/navMenu";
 import { ContactComponent } from './components/contact/contact.component';
+import {NgLibModule} from "nglib-sandbox/projects/ng-lib/src/lib/ng-lib.module";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ContactComponent } from './components/contact/contact.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MaterialModule
+    NgLibModule,
+    MaterialModule,
   ],
   providers: [NavMenu],
   bootstrap: [AppComponent]
