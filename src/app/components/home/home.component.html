@@ -1,17 +1,17 @@
 <div>
   <div class="section">
-    <h3>Numbers Only, max Length 10, and number formatting</h3>
+    <h3>Numbers Only, max Length</h3>
     <form [formGroup]="phoneNumberInputFormGroup">
       <div>
         <lazy-input
           [label]="'Lzy Phone Number'"
           [autoComplete]="'off'"
           [maxLength]="10"
-          [controlName]="'phoneNumber'"
-          [required]="true"></lazy-input>
+          [iconName]="'phone_android'"
+          [controlName]="'phoneNumber'"></lazy-input>
       </div>
     </form>
-    <div>
+    <div class="tel-type">
       <div><b>Input field with tel type applied</b></div>
       <mat-form-field>
         <label>

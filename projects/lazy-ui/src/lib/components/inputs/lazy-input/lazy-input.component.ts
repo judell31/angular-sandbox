@@ -24,6 +24,7 @@ export class LazyInputComponent implements OnInit {
   @Input() maxLength: number
   @Input() controlName: string
   @Input() autoComplete: string;
+  @Input() iconName: string;
 
   control: AbstractControl | null | undefined;
   validators: ValidatorFn[] = [];
@@ -33,8 +34,7 @@ export class LazyInputComponent implements OnInit {
 
   constructor(
     private controlContainer: ControlContainer
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     this.control = this.controlContainer.control?.get(this.controlName);

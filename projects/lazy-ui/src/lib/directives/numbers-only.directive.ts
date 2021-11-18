@@ -7,14 +7,17 @@ import {AbstractControl, ValidationErrors, ValidatorFn} from "@angular/forms";
 })
 export class NumbersOnlyDirective {
   private numbersOnlyRegex: RegExp = new RegExp(/^[1-9][0-9]*$/g);
+  private phoneNumberPattern: RegExp = new RegExp("^(\\d{10}|\\d{12})$");
   initialValue: string = "";
 
   constructor(
     private elRef: ElementRef,
     private component: LazyInputComponent
   ) {
-    component.validators.push(this.numbersOnly());
-    component.patternErrorMap.set("numbersOnly", "Can only contain numbers");
+    // component.validators.push(this.numbersOnly());
+    component.validators.push(this.validPhoneNumber());
+    // component.patternErrorMap.set("numbersOnly", "Can only contain numbers");
+    component.patternErrorMap.set("phoneNumber", "10 digits");
   }
 
   @HostListener('input')
@@ -27,10 +30,18 @@ export class NumbersOnlyDirective {
     }
   }
 
-  numbersOnly(): ValidatorFn {
+  // @HostListener('input')
+  // numbersOnly(): ValidatorFn {
+  //   return (control: AbstractControl): ValidationErrors | null => {
+  //     const valid = this.numbersOnlyRegex.test(control.value);
+  //     return !valid ? {numbersOnly: { requiredPattern: this.numbersOnlyRegex.source, actualValue: control.value}} : null;
+  //   };
+  // }
+
+  validPhoneNumber(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-      const valid = this.numbersOnlyRegex.test(control.value);
-      return !valid ? {numbersOnly: { requiredPattern: this.numbersOnlyRegex.source, aactualValue: control.value}} : null;
+      const valid = this.phoneNumberPattern.test(control.value);
+      return !valid ? {phoneNumber: { requiredPattern: this.phoneNumberPattern.source, actualValue: control.value}} : null;
     };
   }
 
