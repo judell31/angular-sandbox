@@ -8,6 +8,12 @@
     "strict": true,
     "noImplicitReturns": true,
     "strictPropertyInitialization": false,
+    "paths": {
+      "lazy-ui": [
+        "dist/lazy-ui/lazy-ui",
+        "dist/lazy-ui"
+      ]
+    },
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
