@@ -1,5 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {AbstractControl, ControlContainer, FormGroupDirective, ValidatorFn, Validators} from "@angular/forms";
+import {
+  AbstractControl,
+  ControlContainer,
+  FormGroupDirective,
+  ValidationErrors,
+  ValidatorFn,
+  Validators
+} from "@angular/forms";
 
 @Component({
   selector: 'lazy-input',
@@ -18,17 +25,19 @@ export class LazyInputComponent implements OnInit {
   @Input() controlName: string
   @Input() autoComplete: string;
 
-  control: AbstractControl;
+  control: AbstractControl | null | undefined;
   validators: ValidatorFn[] = [];
   errorMessage: string;
   patternErrorMessage: string;
   patternErrorMap = new Map();
 
-  constructor(private controlContainer: ControlContainer) { }
+  constructor(
+    private controlContainer: ControlContainer
+  ) {
+  }
 
   ngOnInit(): void {
     this.control = this.controlContainer.control?.get(this.controlName);
-    console.log(this.control)
 
     if (this.required) {
       this.validators.push(Validators.required);
@@ -43,7 +52,7 @@ export class LazyInputComponent implements OnInit {
     this.updateValidators();
   }
 
-  test() {
+  isControlValid() {
     return (this.control?.dirty || this.control?.touched) && this.control.invalid;
   }
 
@@ -54,7 +63,7 @@ export class LazyInputComponent implements OnInit {
 
   setErrorMessage() {
     if (this.hasError('required')) {
-      this.errorMessage = this.patternErrorMessage;
+      this.errorMessage = this.label + ' is required ';
     }
     else if (this.hasPatternError()) {
       this.errorMessage = this.patternErrorMessage;
@@ -64,6 +73,7 @@ export class LazyInputComponent implements OnInit {
     }
     else if (this.hasError('maxLength')) {
       this.errorMessage = this.label + " cannot exceed " + this.maxLength + " characters ";
+      console.log(this.errorMessage)
     }
     else {
       this.errorMessage = ""

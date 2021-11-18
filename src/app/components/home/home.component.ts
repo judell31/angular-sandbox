@@ -10,7 +10,8 @@ import {FormSubmittedComponent} from "../../dialogs/success/form-submitted/form-
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  inputFormGroup: FormGroup;
+  emailInputFormGroup: FormGroup;
+  phoneNumberInputFormGroup: FormGroup;
   emailRegex = "[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}";
 
   constructor(
@@ -19,25 +20,33 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.inputForm();
+    this.emailInputForm();
+    this.phoneNumberInputForm();
   }
 
-  inputForm() {
-    this.inputFormGroup = this.fb.group({
+  emailInputForm() {
+    this.emailInputFormGroup = this.fb.group({
       email: ['', [Validators.required, Validators.pattern(this.emailRegex)]],
     })
   }
 
+  phoneNumberInputForm() {
+    this.phoneNumberInputFormGroup = this.fb.group({
+      phoneNumber: ['']
+    })
+  }
+
   reset() {
-    this.inputFormGroup.reset();
+    this.phoneNumberInputFormGroup.reset();
+    this.emailInputFormGroup.reset();
   }
 
   checkRequired(controlName: string, errorName: string) {
-    return this.inputFormGroup.controls[controlName].hasError(errorName);
+    return this.emailInputFormGroup.controls[controlName].hasError(errorName);
   }
 
   submit(){
-    if (this.inputFormGroup.valid) {
+    if (this.emailInputFormGroup.valid) {
       this.reset();
       this.dialog.open(FormSubmittedComponent)
     }

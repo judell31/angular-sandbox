@@ -1,13 +1,16 @@
 <div>
   <div class="section">
     <h3>Numbers Only, max Length 10, and number formatting</h3>
-    <div>
-      <lazy-input
-        [label]="'Lzy Phone Number'"
-        [maxLength]="10"
-        [autoComplete]="'off'"
-        [required]="true"></lazy-input>
-    </div>
+    <form [formGroup]="phoneNumberInputFormGroup">
+      <div>
+        <lazy-input
+          [label]="'Lzy Phone Number'"
+          [autoComplete]="'off'"
+          [maxLength]="10"
+          [controlName]="'phoneNumber'"
+          [required]="true"></lazy-input>
+      </div>
+    </form>
     <div>
       <div><b>Input field with tel type applied</b></div>
       <mat-form-field>
@@ -27,7 +30,7 @@
 
   <div class="section">
     <h3>Material Form</h3>
-    <form [formGroup]="inputFormGroup">
+    <form [formGroup]="emailInputFormGroup">
       <mat-form-field>
         <label>
           <input autocomplete="off" matInput placeholder="Email" required formControlName="email">
@@ -41,11 +44,11 @@
         <div class="buttons">
           <!--    Todo: Change styles on global button to match the non global button    -->
           <!--        <pg-button [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></pg-button>-->
-          <ng-container *ngIf="inputFormGroup.invalid">
-            <button class="disabled" (click)="submit()" [disabled]="inputFormGroup.invalid" type="button">Submit</button>
+          <ng-container *ngIf="emailInputFormGroup.invalid">
+            <button class="disabled" (click)="submit()" [disabled]="emailInputFormGroup.invalid" type="button">Submit</button>
           </ng-container>
-          <ng-container *ngIf="inputFormGroup.valid">
-            <button class="enabled" (click)="submit()" [disabled]="inputFormGroup.invalid" type="button">Submit</button>
+          <ng-container *ngIf="emailInputFormGroup.valid">
+            <button class="enabled" (click)="submit()" [disabled]="emailInputFormGroup.invalid" type="button">Submit</button>
           </ng-container>
           <button type="button" (click)="reset()">Reset</button>
         </div>
