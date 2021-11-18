@@ -1,19 +1,12 @@
-<!--<lib-input></lib-input>-->
 <div>
   <div class="section">
     <h3>Numbers Only, max Length 10, and number formatting</h3>
     <div>
-      <mat-form-field>
-        <label>
-          <input
-            autocomplete="off"
-            [maxLength]="10"
-            numbersOnly
-            matInput
-            placeholder="Phone Number">
-        </label>
-        <mat-icon matSuffix>phone_android</mat-icon>
-      </mat-form-field>
+      <lazy-input
+        [label]="'Lzy Phone Number'"
+        [maxLength]="10"
+        [autoComplete]="'off'"
+        [required]="true"></lazy-input>
     </div>
     <div>
       <div><b>Input field with tel type applied</b></div>
@@ -21,9 +14,9 @@
         <label>
           <input
             type="tel"
-            numbersOnly
             autocomplete="off"
             [maxLength]="10"
+            numbersOnly
             matInput
             placeholder="Phone Number">
         </label>

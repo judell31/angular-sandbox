@@ -1,0 +1,23 @@
+<mat-form-field>
+  <label>
+<!--    <input-->
+<!--      [autocomplete]="autoComplete"-->
+<!--      [maxLength]="maxLength"-->
+<!--      [required]="required"-->
+<!--      matInput-->
+<!--      (blur)="setErrorMessage()"-->
+<!--      (input)="setErrorMessage()"-->
+<!--      numbersOnly-->
+<!--      placeholder="{{label}}">-->
+    <input
+      [autocomplete]="autoComplete"
+      [maxLength]="maxLength"
+      [required]="required"
+      matInput
+      (blur)="setErrorMessage()"
+      (input)="setErrorMessage()"
+      placeholder="{{label}}">
+  </label>
+  <mat-error *ngIf="test()">{{errorMessage}}</mat-error>
+  <mat-icon matSuffix>phone_android</mat-icon>
+</mat-form-field>

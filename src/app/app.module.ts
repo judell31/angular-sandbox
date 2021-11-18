@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,14 +11,14 @@ import { NumbersOnlyDirective } from './directives/numbers-only.directive';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormGroupDirective, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { FormSubmittedComponent } from './dialogs/success/form-submitted/form-submitted.component';
 import { PgButtonComponent } from './uitk/pg-button/pg-button.component';
 import { AboutComponent } from './components/about/about.component';
 import {NavMenu} from "./models/navMenu";
 import { ContactComponent } from './components/contact/contact.component';
-import {NgLibModule} from "nglib-sandbox/projects/ng-lib/src/lib/ng-lib.module";
+import {LazyUiModule} from "../../projects/lazy-ui/src/lib/lazy-ui.module";
 
 @NgModule({
   declarations: [
@@ -41,8 +41,8 @@ import {NgLibModule} from "nglib-sandbox/projects/ng-lib/src/lib/ng-lib.module";
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    NgLibModule,
     MaterialModule,
+    LazyUiModule
   ],
   providers: [NavMenu],
   bootstrap: [AppComponent]
