@@ -6,10 +6,11 @@
       [required]="required"
       formControlName="{{controlName}}"
       matInput
-      numbersOnly
+      [type]="type"
       (blur)="setErrorMessage()"
       (input)="setErrorMessage()"
-      placeholder="{{label}}">
+      placeholder="{{label}}"
+    >
   </label>
   <mat-error *ngIf="isControlValid()">{{errorMessage}}</mat-error>
   <mat-icon matSuffix>{{iconName}}</mat-icon>

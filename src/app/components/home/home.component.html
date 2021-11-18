@@ -7,38 +7,43 @@
           [label]="'Lzy Phone Number'"
           [autoComplete]="'off'"
           [maxLength]="10"
+          numbersOnly
+          phoneNumber
           [iconName]="'phone_android'"
-          [controlName]="'phoneNumber'"></lazy-input>
+          [controlName]="'phoneNumber'">
+        </lazy-input>
       </div>
     </form>
     <div class="tel-type">
-      <div><b>Input field with tel type applied</b></div>
-      <mat-form-field>
-        <label>
-          <input
-            type="tel"
-            autocomplete="off"
-            [maxLength]="10"
-            numbersOnly
-            matInput
-            placeholder="Phone Number">
-        </label>
-        <mat-icon matSuffix>phone_android</mat-icon>
-      </mat-form-field>
+      <div><b>Input field with tel type applied (for mobile)</b></div>
+      <form [formGroup]="telTypeInputFormGroup">
+        <lazy-input
+          [label]="'Lzy Tel Type'"
+          [autoComplete]="'off'"
+          [maxLength]="10"
+          numbersOnly
+          phoneNumber
+          [iconName]="'phone_android'"
+          [controlName]="'telType'"
+        >
+        </lazy-input>
+      </form>
     </div>
   </div>
 
   <div class="section">
     <h3>Material Form</h3>
     <form [formGroup]="emailInputFormGroup">
-      <mat-form-field>
-        <label>
-          <input autocomplete="off" matInput placeholder="Email" required formControlName="email">
-        </label>
-        <mat-error *ngIf="checkRequired('email', 'required')">Email is required</mat-error>
-        <mat-error *ngIf="checkRequired('email', 'pattern')">Email address is invalid</mat-error>
-        <mat-icon matSuffix>email</mat-icon>
-      </mat-form-field>
+      <lazy-input
+        [label]="'Lzy Email'"
+        [autoComplete]="'off'"
+        lzy-email
+        [iconName]="'email'"
+        [controlName]="'email'"
+        [maxLength]="100"
+        [required]="true"
+      >
+      </lazy-input>
       <!--  Todo: Figure out how to make buttons same width  -->
       <div class="button-container">
         <div class="buttons">

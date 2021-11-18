@@ -7,7 +7,6 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {MaterialModule} from "./material.module";
 import {NavComponent} from './components/nav/nav.component';
 import {InvalidFormComponent} from './dialogs/errors/invalid-form/invalid-form.component';
-import {NumbersOnlyDirective} from './directives/numbers-only.directive';
 import {FooterComponent} from './components/footer/footer.component';
 import {HomeComponent} from './components/home/home.component';
 import {SidenavComponent} from './components/sidenav/sidenav.component';
@@ -25,7 +24,6 @@ import {LazyUiModule} from "../../projects/lazy-ui/src/lib/lazy-ui.module";
     AppComponent,
     NavComponent,
     InvalidFormComponent,
-    NumbersOnlyDirective,
     FooterComponent,
     HomeComponent,
     SidenavComponent,

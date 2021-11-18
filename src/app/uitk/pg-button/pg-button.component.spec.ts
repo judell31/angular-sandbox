@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PgButtonComponent } from './pg-button.component';
+import {PgButtonComponent} from './pg-button.component';
 
 describe('PgButtonComponent', () => {
   let component: PgButtonComponent;

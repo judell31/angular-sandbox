@@ -4,16 +4,18 @@ import {Directive, ElementRef, HostListener} from '@angular/core';
   selector: '[numbersOnly]'
 })
 export class NumbersOnlyDirective {
-  private regex: RegExp = new RegExp(/^[1-9][0-9]*$/g);
+  private numbersOnlyRegex: RegExp = new RegExp(/^[1-9][0-9]*$/g);
   initialValue: string = "";
 
-  constructor(private elRef: ElementRef) { }
+  constructor(
+    private elRef: ElementRef,
+  ) {}
 
   @HostListener('input')
   inputValidate() {
     const next = this.elRef.nativeElement.value;
 
-    if (next !== "" && !next.match(this.regex)) {
+    if (next !== "" && !next.match(this.numbersOnlyRegex)) {
       this.elRef.nativeElement.value = this.initialValue;
       this.elRef.nativeElement.dispatchEvent(new Event("input"));
     }

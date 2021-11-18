@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { InvalidFormComponent } from './invalid-form.component';
+import {InvalidFormComponent} from './invalid-form.component';
 
 describe('InvalidformComponent', () => {
   let component: InvalidFormComponent;

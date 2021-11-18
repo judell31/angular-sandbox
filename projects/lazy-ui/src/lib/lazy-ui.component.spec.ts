@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { LazyUiComponent } from './lazy-ui.component';
+import {LazyUiComponent} from './lazy-ui.component';
 
 describe('LazyUiComponent', () => {
   let component: LazyUiComponent;

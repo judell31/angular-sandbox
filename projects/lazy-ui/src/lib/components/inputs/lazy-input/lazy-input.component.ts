@@ -1,12 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {
-  AbstractControl,
-  ControlContainer,
-  FormGroupDirective,
-  ValidationErrors,
-  ValidatorFn,
-  Validators
-} from "@angular/forms";
+import {AbstractControl, ControlContainer, FormGroupDirective, ValidatorFn, Validators} from "@angular/forms";
 
 @Component({
   selector: 'lazy-input',
@@ -25,6 +18,7 @@ export class LazyInputComponent implements OnInit {
   @Input() controlName: string
   @Input() autoComplete: string;
   @Input() iconName: string;
+  @Input() type: string;
 
   control: AbstractControl | null | undefined;
   validators: ValidatorFn[] = [];
@@ -92,7 +86,7 @@ export class LazyInputComponent implements OnInit {
       const patternError = patternErrors[i];
       if (this.control?.errors !== null && this.control?.errors[patternError]) {
         hasPatternError = true;
-        this.patternErrorMessage = this.label.concat(this.patternErrorMap.get(patternError));
+        this.patternErrorMessage = this.patternErrorMap.get(patternError);
         break;
       }
     }
