@@ -1,43 +1,25 @@
 <div>
   <div class="section">
-    <h3>Numbers Only, max Length</h3>
-    <form [formGroup]="phoneNumberInputFormGroup">
-      <div>
-        <lazy-input
-          [label]="'Lzy Phone Number'"
-          [autoComplete]="'off'"
-          [maxLength]="10"
-          numbersOnly
-          phoneNumber
-          [iconName]="'phone_android'"
-          [controlName]="'phoneNumber'">
-        </lazy-input>
-      </div>
-    </form>
-    <div class="tel-type">
-      <div><b>Input field with tel type applied (for mobile)</b></div>
-      <form [formGroup]="telTypeInputFormGroup">
-        <lazy-input
-          [label]="'Lzy Tel Type'"
-          [autoComplete]="'off'"
-          [maxLength]="10"
-          numbersOnly
-          phoneNumber
-          [iconName]="'phone_android'"
-          [controlName]="'telType'"
-        >
-        </lazy-input>
-      </form>
-    </div>
-  </div>
-
-  <div class="section">
     <h3>Material Form</h3>
-    <form [formGroup]="emailInputFormGroup">
+    <form [formGroup]="inputFormGroup" class="form">
+      <lazy-input
+        label="First Name"
+        [autoComplete]="'off'"
+        [maxLength]="100"
+        [iconName]="'account_circle'"
+        [controlName]="'firstName'"
+      >
+      </lazy-input>
+      <lazy-input
+        [label]="'Lzy Phone Number'"
+        [autoComplete]="'off'"
+        [maxLength]="10"
+        [iconName]="'phone_android'"
+        [controlName]="'phoneNumber'">
+      </lazy-input>
       <lazy-input
         [label]="'Lzy Email'"
         [autoComplete]="'off'"
-        lzy-email
         [iconName]="'email'"
         [controlName]="'email'"
         [maxLength]="100"
@@ -47,15 +29,13 @@
       <!--  Todo: Figure out how to make buttons same width  -->
       <div class="button-container">
         <div class="buttons">
-          <!--    Todo: Change styles on global button to match the non global button    -->
-          <!--        <pg-button [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></pg-button>-->
-          <ng-container *ngIf="emailInputFormGroup.invalid">
-            <button class="disabled" (click)="submit()" [disabled]="emailInputFormGroup.invalid" type="button">Submit</button>
+          <ng-container *ngIf="inputFormGroup.invalid">
+            <lzy-button [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></lzy-button>
           </ng-container>
-          <ng-container *ngIf="emailInputFormGroup.valid">
-            <button class="enabled" (click)="submit()" [disabled]="emailInputFormGroup.invalid" type="button">Submit</button>
+          <ng-container *ngIf="inputFormGroup.valid">
+            <lzy-button class="primary-btn" (click)="submit()" [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></lzy-button>
           </ng-container>
-          <button type="button" (click)="reset()">Reset</button>
+          <lzy-button class="primary-btn" (click)="reset()" [btnEnabled]="true" buttonLabel="Reset"></lzy-button>
         </div>
       </div>
     </form>
@@ -70,7 +50,7 @@
   </div>
 
   <div class="section">
-    <h3>Text</h3>
+    <h3>Text Justify</h3>
     <div class="text-width">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla p</div>
   </div>
 

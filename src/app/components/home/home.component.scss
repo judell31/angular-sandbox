@@ -10,8 +10,9 @@
   margin-top: 20px;
 }
 
-.tel-type {
-  margin-top: 3%;
+.form {
+  display: flex;
+  flex-flow: column;
 }
 
 .section {
@@ -31,16 +32,15 @@
 
 .buttons {
   display: flex;
-  width: 15%;
 }
 
 button:hover {
   cursor: pointer;
 }
 
-button {
+lzy-button {
   width: 100%;
-  margin-right: 10px;
+  margin-right: 1rem;
 }
 
 @media (max-width: 900px) {
