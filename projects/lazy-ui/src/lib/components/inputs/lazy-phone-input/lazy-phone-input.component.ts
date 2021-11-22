@@ -3,15 +3,15 @@ import {AbstractControl, ControlContainer, FormGroupDirective, ValidatorFn, Vali
 import {MatFormFieldAppearance} from "@angular/material/form-field";
 
 @Component({
-  selector: 'lazy-input',
-  templateUrl: './lazy-input.component.html',
-  styleUrls: ['./lazy-input.component.css'],
+  selector: 'lazy-phone-input',
+  templateUrl: './lazy-phone-input.component.html',
+  styleUrls: ['./lazy-phone-input.component.css'],
   viewProviders: [{
     provide: ControlContainer,
     useExisting: FormGroupDirective,
   }]
 })
-export class LazyInputComponent implements OnInit {
+export class LazyPhoneInputComponent implements OnInit {
   @Input() required: boolean
   @Input() label: string
   @Input() minLength: number
@@ -74,6 +74,8 @@ export class LazyInputComponent implements OnInit {
     else {
       this.errorMessage = ""
     }
+
+    console.log(this.errorMessage)
   }
 
   hasError(type: string) {

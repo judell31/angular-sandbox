@@ -1,4 +1,4 @@
-<mat-form-field>
+<mat-form-field [appearance]="appearance">
   <label>
     <input
       [autocomplete]="autoComplete"
@@ -6,6 +6,7 @@
       [required]="required"
       formControlName="{{controlName}}"
       matInput
+      lazyEmail
       [type]="type"
       (blur)="setErrorMessage()"
       (input)="setErrorMessage()"

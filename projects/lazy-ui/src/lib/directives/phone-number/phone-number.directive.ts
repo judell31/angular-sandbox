@@ -6,8 +6,8 @@ import {AbstractControl, ValidationErrors, ValidatorFn} from "@angular/forms";
   selector: '[phoneNumber]'
 })
 export class PhoneNumberDirective {
-  private numbersOnlyRegex: RegExp = new RegExp(/^[1-9][0-9]*$/g);
-  private phoneNumberPattern: RegExp = new RegExp("^(\\d{10}|\\d{12})$");
+  numbersOnlyRegex: RegExp = new RegExp(/^[1-9][0-9]*$/g);
+  phoneNumberPattern: RegExp = new RegExp("^(\\d{10}|\\d{12})$");
   initialValue: string = "";
 
   constructor(

@@ -4,11 +4,12 @@ import {LazyInputComponent} from "./components/inputs/lazy-input/lazy-input.comp
 import {CommonModule} from "@angular/common";
 import {FormGroupDirective, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MaterialModule} from "./material.module";
-import {NumbersOnlyDirective} from "./directives/numbers-onley/numbers-only.directive";
+import {NumbersOnlyDirective} from "./directives/numbers-only/numbers-only.directive";
 import {PhoneNumberDirective} from "./directives/phone-number/phone-number.directive";
 import {LzyButtonComponent} from "./components/buttons/lzy-button/lzy-button.component";
-import {EmailDirective} from "./directives/email/email.directive";
 import {LazyEmailInputComponent} from "./components/inputs/lazy-email-input/lazy-email-input.component";
+import {LazyPhoneInputComponent} from "./components/inputs/lazy-phone-input/lazy-phone-input.component";
+import {LazyEmailDirective} from "./directives/lazy-email/lazy-email.directive";
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import {LazyEmailInputComponent} from "./components/inputs/lazy-email-input/lazy
     NumbersOnlyDirective,
     PhoneNumberDirective,
     LzyButtonComponent,
+    LazyEmailDirective,
+    LazyPhoneInputComponent,
     LazyEmailInputComponent,
-    EmailDirective
   ],
   imports: [
     MaterialModule,
@@ -28,14 +30,14 @@ import {LazyEmailInputComponent} from "./components/inputs/lazy-email-input/lazy
   ],
   providers: [
     FormGroupDirective,
-    NumbersOnlyDirective,
-    PhoneNumberDirective,
-    LazyInputComponent,
+    LazyInputComponent
   ],
   exports: [
     LazyUiComponent,
     LazyEmailInputComponent,
     LazyInputComponent,
+    LazyPhoneInputComponent,
+    LazyEmailDirective,
     NumbersOnlyDirective,
     LzyButtonComponent,
     PhoneNumberDirective

@@ -3,6 +3,7 @@
     <h3>Material Form</h3>
     <form [formGroup]="inputFormGroup" class="form">
       <lazy-input
+        appearance="fill"
         label="First Name"
         [autoComplete]="'off'"
         [maxLength]="100"
@@ -10,13 +11,13 @@
         [controlName]="'firstName'"
       >
       </lazy-input>
-      <lazy-input
+      <lazy-phone-input
         label="Lzy Phone Number"
         [autoComplete]="'off'"
         [maxLength]="10"
         [iconName]="'phone_android'"
         [controlName]="'phoneNumber'">
-      </lazy-input>
+      </lazy-phone-input>
       <lazy-email-input
         [label]="'Lzy Email'"
         [autoComplete]="'off'"
