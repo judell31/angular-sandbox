@@ -11,13 +11,13 @@
       >
       </lazy-input>
       <lazy-input
-        [label]="'Lzy Phone Number'"
+        label="Lzy Phone Number"
         [autoComplete]="'off'"
         [maxLength]="10"
         [iconName]="'phone_android'"
         [controlName]="'phoneNumber'">
       </lazy-input>
-      <lazy-input
+      <lazy-email-input
         [label]="'Lzy Email'"
         [autoComplete]="'off'"
         [iconName]="'email'"
@@ -25,8 +25,7 @@
         [maxLength]="100"
         [required]="true"
       >
-      </lazy-input>
-      <!--  Todo: Figure out how to make buttons same width  -->
+      </lazy-email-input>
       <div class="button-container">
         <div class="buttons">
           <ng-container *ngIf="inputFormGroup.invalid">
@@ -42,6 +41,68 @@
   </div>
 
   <div class="section">
+    <h3>Material Form Stepper</h3>
+
+<!--    <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">-->
+<!--      {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}-->
+<!--    </button>-->
+    <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Fill out your name</ng-template>
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+          </mat-form-field>
+<!--                <lazy-input-->
+<!--                  label="First Name"-->
+<!--                  [autoComplete]="'off'"-->
+<!--                  [maxLength]="100"-->
+<!--                  [required]="true"-->
+<!--                  [iconName]="'account_circle'"-->
+<!--                  [controlName]="'firstCtrl'"-->
+<!--                >-->
+<!--                </lazy-input>-->
+          <div>
+            <button type="button" mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Fill out your address</ng-template>
+          <mat-form-field appearance="fill">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY">
+          </mat-form-field>
+<!--          <lazy-input-->
+<!--            label="Address"-->
+<!--            [autoComplete]="'off'"-->
+<!--            [maxLength]="100"-->
+<!--            [iconName]="'account_circle'"-->
+<!--            [controlName]="'secondCtrl'"-->
+<!--          >-->
+<!--          </lazy-input>-->
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+          <button type="button" mat-button (click)="submitForm(); stepper.reset()">Submit</button>
+          <button type="button" mat-button matStepperPrevious>Back</button>
+          <button type="button" mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+
+  </div>
+
+  <div class="section">
     <h3>Drag and Drop</h3>
   </div>
 
@@ -54,4 +115,15 @@
     <div class="text-width">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla p</div>
   </div>
 
+  <div class="section">
+    <h3>Material Grid</h3>
+
+    <mat-grid-list cols="4" rowHeight="1:0.1" gutterSize="0.5rem">
+      <mat-grid-tile>1</mat-grid-tile>
+      <mat-grid-tile>2</mat-grid-tile>
+      <mat-grid-tile>3</mat-grid-tile>
+      <mat-grid-tile>4</mat-grid-tile>
+      <mat-grid-tile>4</mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>

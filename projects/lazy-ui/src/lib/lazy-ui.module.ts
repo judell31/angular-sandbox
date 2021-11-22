@@ -7,6 +7,8 @@ import {MaterialModule} from "./material.module";
 import {NumbersOnlyDirective} from "./directives/numbers-onley/numbers-only.directive";
 import {PhoneNumberDirective} from "./directives/phone-number/phone-number.directive";
 import {LzyButtonComponent} from "./components/buttons/lzy-button/lzy-button.component";
+import {EmailDirective} from "./directives/email/email.directive";
+import {LazyEmailInputComponent} from "./components/inputs/lazy-email-input/lazy-email-input.component";
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import {LzyButtonComponent} from "./components/buttons/lzy-button/lzy-button.com
     LazyInputComponent,
     NumbersOnlyDirective,
     PhoneNumberDirective,
-    LzyButtonComponent
+    LzyButtonComponent,
+    LazyEmailInputComponent,
+    EmailDirective
   ],
   imports: [
     MaterialModule,
@@ -25,10 +29,12 @@ import {LzyButtonComponent} from "./components/buttons/lzy-button/lzy-button.com
   providers: [
     FormGroupDirective,
     NumbersOnlyDirective,
-    PhoneNumberDirective
+    PhoneNumberDirective,
+    LazyInputComponent,
   ],
   exports: [
     LazyUiComponent,
+    LazyEmailInputComponent,
     LazyInputComponent,
     NumbersOnlyDirective,
     LzyButtonComponent,

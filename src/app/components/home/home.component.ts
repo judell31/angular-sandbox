@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {FormSubmittedComponent} from "../../dialogs/success/form-submitted/form-submitted.component";
 
@@ -10,6 +10,9 @@ import {FormSubmittedComponent} from "../../dialogs/success/form-submitted/form-
 })
 export class HomeComponent implements OnInit {
   inputFormGroup: FormGroup;
+  isLinear = true;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -18,14 +21,36 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.inputForm();
+    this.firstGroupForm();
+    this.secondGroupForm();
   }
 
   inputForm() {
     this.inputFormGroup = this.fb.group({
-      email: [''],
-      firstName: [''],
-      phoneNumber: ['']
+      email: new FormControl(''),
+      firstName: new FormControl(''),
+      phoneNumber: new FormControl('')
+    });
+  }
+
+  firstGroupForm() {
+    this.firstFormGroup = this.fb.group({
+      firstCtrl: new FormControl(''),
     })
+  }
+
+  secondGroupForm() {
+    this.secondFormGroup = this.fb.group({
+      secondCtrl: new FormControl(''),
+    })
+  }
+
+  submitForm() {
+    console.log(this.firstFormGroup.value);
+    console.log(this.secondFormGroup.value);
+    this.dialog.open(FormSubmittedComponent);
+    this.secondFormGroup.reset();
+    this.firstFormGroup.reset();
   }
 
   reset() {

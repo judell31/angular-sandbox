@@ -15,6 +15,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatListModule} from "@angular/material/list";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatStepperModule} from "@angular/material/stepper";
 
 @NgModule({
   imports: [
@@ -32,8 +34,10 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MatToolbarModule,
     MatTooltipModule,
     MatCardModule,
+    MatStepperModule,
     MatCheckboxModule,
     MatTabsModule,
+    MatGridListModule
   ],
 
   exports: [
@@ -53,6 +57,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MatCardModule,
     MatCheckboxModule,
     MatTabsModule,
+    MatGridListModule,
+    MatStepperModule
   ],
   providers: [
     MatDatepickerModule,
