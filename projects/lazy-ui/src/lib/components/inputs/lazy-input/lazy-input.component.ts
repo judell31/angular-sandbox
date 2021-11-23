@@ -19,6 +19,7 @@ export class LazyInputComponent implements OnInit {
   @Input() controlName: string
   @Input() autoComplete: string;
   @Input() iconName: string;
+  @Input() hint: string;
   @Input() type: string;
   @Input() appearance: MatFormFieldAppearance;
 
