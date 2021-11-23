@@ -30,6 +30,8 @@ import {LzyEmailDirective} from "./directives/lzy-email/lzy-email.directive";
   ],
   providers: [
     FormGroupDirective,
+    LazyInputComponent,
+    LazyEmailInputComponent
   ],
   exports: [
     LazyUiComponent,

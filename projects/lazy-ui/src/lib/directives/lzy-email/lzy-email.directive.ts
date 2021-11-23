@@ -18,7 +18,7 @@ export class LzyEmailDirective {
   validEmail(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       const valid = this.emailPattern.test(control.value);
-      return !valid ? {phoneNumber: { requiredPattern: this.emailPattern.source, actualValue: control.value}} : null;
+      return !valid ? {email: { requiredPattern: this.emailPattern.source, actualValue: control.value}} : null;
     };
   }
 }

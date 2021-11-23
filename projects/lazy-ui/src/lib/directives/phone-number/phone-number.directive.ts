@@ -6,8 +6,8 @@ import {LazyPhoneInputComponent} from "../../components/inputs/lazy-phone-input/
   selector: '[phoneNumber]'
 })
 export class PhoneNumberDirective {
-  numbersOnlyRegex: RegExp = new RegExp(/^[1-9][0-9]*$/g);
-  phoneNumberPattern: RegExp = new RegExp(/^(\\d{10}|\\d{12})$/g);
+  numbersOnlyRegex: RegExp = new RegExp("^[1-9][0-9]*$");
+  phoneNumberPattern: RegExp = new RegExp("^(\\d{10}|\\d{12})$");
   initialValue: string = "";
 
   constructor(

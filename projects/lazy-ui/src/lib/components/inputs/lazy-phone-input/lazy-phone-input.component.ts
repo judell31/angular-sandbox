@@ -75,8 +75,6 @@ export class LazyPhoneInputComponent implements OnInit {
     else {
       this.errorMessage = ""
     }
-
-    console.log(this.errorMessage)
   }
 
   hasError(type: string) {
