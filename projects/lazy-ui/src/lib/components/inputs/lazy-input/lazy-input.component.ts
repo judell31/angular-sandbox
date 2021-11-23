@@ -70,7 +70,6 @@ export class LazyInputComponent implements OnInit {
     }
     else if (this.hasError('maxLength')) {
       this.errorMessage = this.label + " cannot exceed " + this.maxLength + " characters ";
-      console.log(this.errorMessage)
     }
     else {
       this.errorMessage = ""

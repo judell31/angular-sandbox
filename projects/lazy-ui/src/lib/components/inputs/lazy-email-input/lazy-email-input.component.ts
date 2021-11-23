@@ -20,6 +20,7 @@ export class LazyEmailInputComponent implements OnInit {
   @Input() autoComplete: string;
   @Input() iconName: string;
   @Input() type: string;
+  @Input() hint: string;
   @Input() appearance: MatFormFieldAppearance;
 
   control: AbstractControl | null | undefined;

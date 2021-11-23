@@ -1,18 +1,18 @@
 import {Directive, ElementRef, HostListener} from '@angular/core';
-import {LazyInputComponent} from "../../components/inputs/lazy-input/lazy-input.component";
 import {AbstractControl, ValidationErrors, ValidatorFn} from "@angular/forms";
+import {LazyPhoneInputComponent} from "../../components/inputs/lazy-phone-input/lazy-phone-input.component";
 
 @Directive({
   selector: '[phoneNumber]'
 })
 export class PhoneNumberDirective {
   numbersOnlyRegex: RegExp = new RegExp(/^[1-9][0-9]*$/g);
-  phoneNumberPattern: RegExp = new RegExp("^(\\d{10}|\\d{12})$");
+  phoneNumberPattern: RegExp = new RegExp(/^(\\d{10}|\\d{12})$/g);
   initialValue: string = "";
 
   constructor(
     private elRef: ElementRef,
-    private component: LazyInputComponent
+    private component: LazyPhoneInputComponent
   ) {
     component.validators.push(this.validPhoneNumber());
     component.patternErrorMap.set("phoneNumber", " Must be 10 digits long");

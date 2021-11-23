@@ -13,8 +13,10 @@
       >
       </lazy-input>
       <lazy-phone-input
+        appearance="legacy"
         label="Lzy Phone Number"
         [autoComplete]="'off'"
+        hint="Example: 012-345-6789"
         [maxLength]="10"
         [iconName]="'phone_android'"
         [controlName]="'phoneNumber'">
@@ -23,6 +25,7 @@
         [label]="'Lzy Email'"
         [autoComplete]="'off'"
         [iconName]="'email'"
+        hint="name@domain.com"
         [controlName]="'email'"
         [maxLength]="100"
         [required]="true"
@@ -52,14 +55,12 @@
       <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
           <ng-template matStepLabel>Fill out your name</ng-template>
-<!--          <mat-form-field appearance="fill">-->
-<!--            <mat-label>Name</mat-label>-->
-<!--            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>-->
-<!--          </mat-form-field>-->
                 <lazy-input
+                  appearance="standard"
                   label="First Name"
                   [autoComplete]="'off'"
                   [maxLength]="100"
+                  hint="Example: James Jones"
                   [required]="true"
                   [iconName]="'account_circle'"
                   [controlName]="'firstCtrl'"
@@ -73,21 +74,17 @@
       <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
           <ng-template matStepLabel>Fill out your address</ng-template>
-          <mat-form-field appearance="fill">
-            <mat-label>Address</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY">
-          </mat-form-field>
-<!--          <lazy-input-->
-<!--            label="Address"-->
-<!--            [autoComplete]="'off'"-->
-<!--            [maxLength]="100"-->
-<!--            [iconName]="'account_circle'"-->
-<!--            [controlName]="'secondCtrl'"-->
-<!--          >-->
-<!--          </lazy-input>-->
+          <lazy-input
+            label="Address"
+            [autoComplete]="'off'"
+            [maxLength]="100"
+            [iconName]="'account_circle'"
+            [controlName]="'secondCtrl'"
+          >
+          </lazy-input>
           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button type="button" mat-button matStepperPrevious>Back</button>
+            <button type="button" mat-button matStepperNext>Next</button>
           </div>
         </form>
       </mat-step>
