@@ -16,6 +16,9 @@ import {LzyEmailDirective} from "./directives/lzy-email/lzy-email.directive";
     LazyInputComponent,
     LzyButtonComponent,
     LazyPhoneInputComponent,
+    LzyEmailDirective,
+    PhoneNumberDirective,
+    NumbersOnlyDirective,
     LazyEmailInputComponent,
   ],
   imports: [
