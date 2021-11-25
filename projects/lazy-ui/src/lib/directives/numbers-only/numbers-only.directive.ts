@@ -13,7 +13,9 @@ export class NumbersOnlyDirective {
 
   @HostListener('input')
   inputValidate() {
-    const next = this.elRef.nativeElement.value;
+    const next = this.elRef.nativeElement.$data.value;
+
+    console.log(next)
 
     if (next !== "" && !next.match(this.numbersOnlyRegex)) {
       this.elRef.nativeElement.value = this.initialValue;

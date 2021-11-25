@@ -21,6 +21,7 @@ export class PhoneNumberDirective {
   @HostListener('input')
   inputValidate() {
     const next = this.elRef.nativeElement.value;
+    const next2 = this.elRef.nativeElement;
 
     if (next !== "" && !next.match(this.numbersOnlyRegex)) {
       this.elRef.nativeElement.value = this.initialValue;
