@@ -9,6 +9,9 @@ export * from './lib/components/inputs/lazy-phone-input/lazy-phone-input.compone
 export * from './lib/components/buttons/lzy-button/lzy-button.component';
 
 //Directives
+export * from './lib/directives/phone-number/phone-number.directive';
+export * from './lib/directives/lzy-email/lzy-email.directive';
+export * from './lib/directives/numbers-only/numbers-only.directive';
 
 //Services
 

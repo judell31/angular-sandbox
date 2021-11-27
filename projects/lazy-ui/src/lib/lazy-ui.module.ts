@@ -34,6 +34,9 @@ import {LzyEmailDirective} from "./directives/lzy-email/lzy-email.directive";
     LazyEmailInputComponent,
     LazyInputComponent,
     LazyPhoneInputComponent,
+    LzyEmailDirective,
+    PhoneNumberDirective,
+    NumbersOnlyDirective,
     LzyButtonComponent,
   ]
 })
