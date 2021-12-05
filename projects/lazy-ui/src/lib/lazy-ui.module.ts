@@ -18,8 +18,6 @@ import {LazyDropDownComponent} from "./components/inputs/lazy-drop-down/lazy-dro
     LazyInputComponent,
     LzyButtonComponent,
     LzyEmailDirective,
-    PhoneNumberDirective,
-    NumbersDirective,
     LazyPhoneInputComponent,
     LazyNumberInputComponent,
     LazyDropDownComponent,
@@ -38,8 +36,6 @@ import {LazyDropDownComponent} from "./components/inputs/lazy-drop-down/lazy-dro
   exports: [
     LazyInputComponent,
     LzyEmailDirective,
-    PhoneNumberDirective,
-    NumbersDirective,
     LazyPhoneInputComponent,
     LazyNumberInputComponent,
     LazyDropDownComponent,

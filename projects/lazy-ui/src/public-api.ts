@@ -3,8 +3,9 @@
  */
 
 //Components
-export * from './lib/components/inputs/lazy-input/lazy-input.component';
 export * from './lib/components/buttons/lzy-button/lzy-button.component';
+export * from './lib/components/inputs/lazy-input/lazy-input.component';
+export * from './lib/components/inputs/lazy-drop-down/lazy-drop-down.component';
 export * from './lib/components/inputs/lazy-phone-input/lazy-phone-input.component';
 export * from './lib/components/inputs/lazy-number-input/lazy-number-input.component';
 export * from './lib/components/buttons/lzy-back-stepper-button/lzy-back-stepper-button.component';
