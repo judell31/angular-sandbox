@@ -14,6 +14,7 @@ import {MatFormFieldAppearance} from "@angular/material/form-field";
 export class LazyInputComponent implements OnInit {
   @Input() required: boolean
   @Input() label: string
+  @Input() placeHolder: string
   @Input() minLength: number
   @Input() maxLength: number
   @Input() controlName: string
@@ -60,16 +61,16 @@ export class LazyInputComponent implements OnInit {
 
   setErrorMessage() {
     if (this.hasError('required')) {
-      this.errorMessage = this.label + ' is required ';
+      this.errorMessage = 'This field is required ';
     }
     else if (this.hasPatternError()) {
       this.errorMessage = this.patternErrorMessage;
     }
     else if (this.hasError('minLength')) {
-      this.errorMessage = this.label + " must be at least " + this.minLength + " characters ";
+      this.errorMessage = "Must contain at least " + this.minLength + " characters ";
     }
     else if (this.hasError('maxLength')) {
-      this.errorMessage = this.label + " cannot exceed " + this.maxLength + " characters ";
+      this.errorMessage = "Cannot exceed " + this.maxLength + " characters ";
     }
     else {
       this.errorMessage = ""

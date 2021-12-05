@@ -1,9 +1,7 @@
 import {NgModule} from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
-import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
-import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -11,57 +9,41 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatListModule} from "@angular/material/list";
-import {MatToolbarModule} from "@angular/material/toolbar";
-import {MatGridListModule} from "@angular/material/grid-list";
 import {MatStepperModule} from "@angular/material/stepper";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   imports: [
     MatButtonModule,
     MatIconModule,
-    MatProgressSpinnerModule,
     MatSidenavModule,
     MatInputModule,
     MatListModule,
+    MatGridListModule,
     MatDialogModule,
     MatFormFieldModule,
     MatSelectModule,
     MatRadioModule,
-    MatDatepickerModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    MatCardModule,
-    MatStepperModule,
     MatCheckboxModule,
     MatTabsModule,
-    MatGridListModule
+    MatStepperModule
   ],
 
   exports: [
     MatButtonModule,
     MatIconModule,
-    MatProgressSpinnerModule,
     MatSidenavModule,
     MatInputModule,
+    MatListModule,
     MatDialogModule,
+    MatGridListModule,
     MatFormFieldModule,
     MatSelectModule,
     MatRadioModule,
-    MatListModule,
-    MatToolbarModule,
-    MatDatepickerModule,
-    MatTooltipModule,
-    MatCardModule,
     MatCheckboxModule,
     MatTabsModule,
-    MatGridListModule,
     MatStepperModule
-  ],
-  providers: [
-    MatDatepickerModule,
   ]
 })
 export class MaterialModule{}

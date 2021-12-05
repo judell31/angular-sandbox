@@ -13,12 +13,10 @@ import {SidenavComponent} from './components/sidenav/sidenav.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormSubmittedComponent} from './dialogs/success/form-submitted/form-submitted.component';
-import {PgButtonComponent} from './uitk/pg-button/pg-button.component';
 import {AboutComponent} from './components/about/about.component';
 import {NavMenu} from "./models/navMenu";
 import {ContactComponent} from './components/contact/contact.component';
-import {LazyUiModule} from "../../projects/lazy-ui/src/lib/lazy-ui.module";
-import {CdkStepper} from "@angular/cdk/stepper";
+import {LazyUiModule} from "lazy-ui";
 
 @NgModule({
   declarations: [
@@ -29,7 +27,6 @@ import {CdkStepper} from "@angular/cdk/stepper";
     HomeComponent,
     SidenavComponent,
     FormSubmittedComponent,
-    PgButtonComponent,
     AboutComponent,
     ContactComponent,
   ],
@@ -40,8 +37,8 @@ import {CdkStepper} from "@angular/cdk/stepper";
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    LazyUiModule,
     MaterialModule,
-    LazyUiModule
   ],
   providers: [NavMenu],
   bootstrap: [AppComponent]

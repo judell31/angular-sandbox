@@ -1,5 +1,6 @@
-<mat-form-field [appearance]="appearance">
-  <label>
+<mat-form-field class="field" [appearance]="appearance">
+<!-- Todo: add mat label tag -->
+  <mat-label>{{label}}</mat-label>
     <input
       [autocomplete]="autoComplete"
       [maxLength]="maxLength"
@@ -9,9 +10,8 @@
       [type]="type"
       (blur)="setErrorMessage()"
       (input)="setErrorMessage()"
-      placeholder="{{label}}"
+      placeholder="{{placeHolder}}"
     >
-  </label>
   <mat-hint>{{hint}}</mat-hint>
   <mat-error *ngIf="isControlValid()">{{errorMessage}}</mat-error>
   <mat-icon matSuffix>{{iconName}}</mat-icon>

@@ -1,6 +1,6 @@
 import {Directive, ElementRef, HostListener} from '@angular/core';
 import {AbstractControl, ValidationErrors, ValidatorFn} from "@angular/forms";
-import {LazyPhoneInputComponent} from "../../components/inputs/lazy-phone-input/lazy-phone-input.component";
+import {LazyInputComponent} from "../../components/inputs/lazy-input/lazy-input.component";
 
 @Directive({
   selector: '[phoneNumber]'
@@ -12,7 +12,7 @@ export class PhoneNumberDirective {
 
   constructor(
     private elRef: ElementRef,
-    private component: LazyPhoneInputComponent
+    private component: LazyInputComponent
   ) {
     component.validators.push(this.validPhoneNumber());
     component.patternErrorMap.set("phoneNumber", " Must be 10 digits long");
@@ -21,19 +21,11 @@ export class PhoneNumberDirective {
   @HostListener('input')
   inputValidate() {
     const next = this.elRef.nativeElement.value;
-    const next2 = this.elRef.nativeElement;
 
     if (next !== "" && !next.match(this.numbersOnlyRegex)) {
       this.elRef.nativeElement.value = this.initialValue;
       this.elRef.nativeElement.dispatchEvent(new Event("input"));
     }
-  }
-
-  @HostListener("keydown")
-  @HostListener("paste")
-  @HostListener("drop")
-  getInitialValue(): void {
-    this.initialValue = this.elRef.nativeElement.value;
   }
 
   validPhoneNumber(): ValidatorFn {
@@ -43,4 +35,10 @@ export class PhoneNumberDirective {
     };
   }
 
+  @HostListener("keydown")
+  @HostListener("paste")
+  @HostListener("drop")
+  getInitialValue(): void {
+    this.initialValue = this.elRef.nativeElement.value;
+  }
 }

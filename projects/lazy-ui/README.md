@@ -2,4 +2,4 @@
 
 A library of Angular Material reusable components
 
-Contains a phone number input, email, a basic input, and a basic button.
+Contains an input component, button component, phone number, numbers only, and email directives.

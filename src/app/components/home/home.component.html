@@ -12,7 +12,7 @@
         hint="This is a hint"
       >
       </lazy-input>
-      <lazy-phone-input
+      <lazy-input
         appearance="legacy"
         label="Lzy Phone Number"
         [autoComplete]="'off'"
@@ -20,9 +20,9 @@
         [maxLength]="10"
         [iconName]="'phone_android'"
         [controlName]="'phoneNumber'">
-      </lazy-phone-input>
-      <lazy-email-input
-        appearance="outline"
+      </lazy-input>
+      <lazy-input
+        appearance="legacy"
         [label]="'Lzy Email'"
         [autoComplete]="'off'"
         [iconName]="'email'"
@@ -31,7 +31,7 @@
         [maxLength]="100"
         [required]="true"
       >
-      </lazy-email-input>
+      </lazy-input>
       <div class="button-container">
         <div class="buttons">
           <ng-container *ngIf="inputFormGroup.invalid">

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "build": "ng build",
     "lazyUi": "npm i && ng build lazy-ui && cd dist/lazy-ui && npm publish --access public",
     "watch": "ng build --watch --configuration development",
@@ -22,7 +22,7 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
-    "nglib-sandbox": "^1.0.0",
+    "bootstrap-sass": "^3.4.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

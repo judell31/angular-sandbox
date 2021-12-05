@@ -3,7 +3,7 @@ import {Directive, ElementRef, HostListener} from '@angular/core';
 @Directive({
   selector: '[numbersOnly]'
 })
-export class NumbersOnlyDirective {
+export class NumbersDirective {
   private numbersOnlyRegex: RegExp = new RegExp(/^[1-9][0-9]*$/g);
   initialValue: string = "";
 

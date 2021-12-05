@@ -4,14 +4,16 @@
 
 //Components
 export * from './lib/components/inputs/lazy-input/lazy-input.component';
-export * from './lib/components/inputs/lazy-email-input/lazy-email-input.component';
-export * from './lib/components/inputs/lazy-phone-input/lazy-phone-input.component';
 export * from './lib/components/buttons/lzy-button/lzy-button.component';
+export * from './lib/components/inputs/lazy-phone-input/lazy-phone-input.component';
+export * from './lib/components/inputs/lazy-number-input/lazy-number-input.component';
+export * from './lib/components/buttons/lzy-back-stepper-button/lzy-back-stepper-button.component';
+export * from './lib/components/buttons/lzy-next-stepper-button/lzy-next-stepper-button.component';
 
 //Directives
 export * from './lib/directives/phone-number/phone-number.directive';
 export * from './lib/directives/lzy-email/lzy-email.directive';
-export * from './lib/directives/numbers-only/numbers-only.directive';
+export * from './lib/directives/numbers/numbers.directive';
 
 //Services
 
