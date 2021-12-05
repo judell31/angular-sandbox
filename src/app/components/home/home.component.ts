@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   isLinear = true;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  dropDownOptions: any[];
 
   constructor(
     private fb: FormBuilder,
@@ -23,13 +24,25 @@ export class HomeComponent implements OnInit {
     this.inputForm();
     this.firstGroupForm();
     this.secondGroupForm();
+
+    this.dropDownOptions = [
+      {
+        name: "name",
+        value: "value"
+      },
+      {
+        name: "name1",
+        value: "value1"
+      }
+    ]
   }
 
   inputForm() {
     this.inputFormGroup = this.fb.group({
       email: new FormControl(''),
       firstName: new FormControl(''),
-      phoneNumber: new FormControl('')
+      phoneNumber: new FormControl(''),
+      dropDown: new FormControl('')
     });
   }
 
@@ -45,7 +58,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  submitForm() {
+  submitStepperForm() {
     console.log(this.firstFormGroup.value);
     console.log(this.secondFormGroup.value);
     this.dialog.open(FormSubmittedComponent);

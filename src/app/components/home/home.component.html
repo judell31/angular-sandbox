@@ -12,18 +12,29 @@
         hint="This is a hint"
       >
       </lazy-input>
-      <lazy-input
+      <lazy-phone-input
         appearance="legacy"
         label="Lzy Phone Number"
         [autoComplete]="'off'"
         hint="Example: 012-345-6789"
         [maxLength]="10"
+        [type]="'tel'"
         [iconName]="'phone_android'"
         [controlName]="'phoneNumber'">
-      </lazy-input>
+      </lazy-phone-input>
+      <lazy-drop-down
+        appearance="outline"
+        label="Drop Down"
+        [controlName]="'dropDown'"
+        [options]="dropDownOptions"
+        [iconName]="'phone_android'"
+        [required]="true"
+      >
+      </lazy-drop-down>
       <lazy-input
         appearance="legacy"
         [label]="'Lzy Email'"
+        lzyEmail
         [autoComplete]="'off'"
         [iconName]="'email'"
         hint="name@domain.com"
@@ -93,7 +104,7 @@
         <ng-template matStepLabel>Done</ng-template>
         <p>You are now done.</p>
         <div>
-          <button type="button" mat-button (click)="submitForm(); stepper.reset()">Submit</button>
+          <button type="button" mat-button (click)="submitStepperForm(); stepper.reset()">Submit</button>
           <button type="button" mat-button matStepperPrevious>Back</button>
           <button type="button" mat-button (click)="stepper.reset()">Reset</button>
         </div>

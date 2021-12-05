@@ -16,7 +16,7 @@ import {FormSubmittedComponent} from './dialogs/success/form-submitted/form-subm
 import {AboutComponent} from './components/about/about.component';
 import {NavMenu} from "./models/navMenu";
 import {ContactComponent} from './components/contact/contact.component';
-import {LazyUiModule} from "lazy-ui";
+import {LazyUiModule} from "projects/lazy-ui/src/lib/lazy-ui.module";
 
 @NgModule({
   declarations: [
