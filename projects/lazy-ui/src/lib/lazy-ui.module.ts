@@ -19,6 +19,8 @@ import {LazyDropDownComponent} from "./components/inputs/lazy-drop-down/lazy-dro
     LzyButtonComponent,
     LzyEmailDirective,
     LazyPhoneInputComponent,
+    PhoneNumberDirective,
+    NumbersDirective,
     LazyNumberInputComponent,
     LazyDropDownComponent,
     LzyNextStepperButtonComponent,
