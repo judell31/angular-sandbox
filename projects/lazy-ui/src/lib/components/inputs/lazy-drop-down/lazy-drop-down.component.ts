@@ -20,6 +20,7 @@ export class LazyDropDownComponent implements OnInit {
   @Input() controlName: string
   @Input() iconName: string;
   @Input() appearance: MatFormFieldAppearance;
+  @Input() nullOption: string;
 
   control: AbstractControl | null | undefined;
   validators: ValidatorFn[] = [];
@@ -42,6 +43,10 @@ export class LazyDropDownComponent implements OnInit {
   updateValidators() {
     this.control?.setValidators(this.validators);
     this.control?.updateValueAndValidity();
+  }
+
+  isControlValid() {
+    return (this.control?.dirty || this.control?.touched) && this.control.invalid;
   }
 
   setErrorMessage() {

@@ -6,7 +6,6 @@ import {PhoneNumberDirective} from "./directives/phone-number/phone-number.direc
 import {LzyButtonComponent} from "./components/buttons/lzy-button/lzy-button.component";
 import {LzyEmailDirective} from "./directives/lzy-email/lzy-email.directive";
 import {MaterialModule} from "./material.module";
-import {LazyPhoneInputComponent} from "./components/inputs/lazy-phone-input/lazy-phone-input.component";
 import {NumbersDirective} from "./directives/numbers/numbers.directive";
 import {LazyDropDownComponent} from "./components/inputs/lazy-drop-down/lazy-drop-down.component";
 import {LzyNextStepperButtonComponent} from "./components/buttons/lzy-next-stepper-button/lzy-next-stepper-button.component";
@@ -18,10 +17,9 @@ import {LazyNumberInputComponent} from "./components/inputs/lazy-number-input/la
     LazyInputComponent,
     LzyButtonComponent,
     LzyEmailDirective,
-    LazyPhoneInputComponent,
+    LazyNumberInputComponent,
     PhoneNumberDirective,
     NumbersDirective,
-    LazyNumberInputComponent,
     LazyDropDownComponent,
     LzyNextStepperButtonComponent,
     LzyBackStepperButtonComponent
@@ -38,9 +36,9 @@ import {LazyNumberInputComponent} from "./components/inputs/lazy-number-input/la
   exports: [
     LazyInputComponent,
     LzyEmailDirective,
-    LazyPhoneInputComponent,
     LazyDropDownComponent,
     LzyButtonComponent,
+    LazyNumberInputComponent,
     LazyNumberInputComponent,
     PhoneNumberDirective,
     NumbersDirective,
