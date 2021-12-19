@@ -12,16 +12,17 @@
         hint="This is a hint"
       >
       </lazy-input>
-      <lazy-phone-input
+      <lazy-number-input
         appearance="legacy"
         label="Lzy Phone Number"
         [autoComplete]="'off'"
         hint="Example: 012-345-6789"
         [maxLength]="10"
         [type]="'tel'"
+        phoneNumber
         [iconName]="'phone_android'"
         [controlName]="'phoneNumber'">
-      </lazy-phone-input>
+      </lazy-number-input>
       <lazy-drop-down
         appearance="outline"
         label="Drop Down"
