@@ -12,6 +12,8 @@
         hint="This is a hint"
       >
       </lazy-input>
+      <input class="file-input" (change)="onFileSelected($event)" type="file" placeholder="File" formControlName="file">
+      <div>{{this.selectedFileName}}</div>
       <lazy-number-input
         appearance="legacy"
         label="Lzy Phone Number"

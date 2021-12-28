@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {FormSubmittedComponent} from "../../dialogs/success/form-submitted/form-submitted.component";
+import {File} from "@angular/compiler-cli/src/ngtsc/file_system/testing/src/mock_file_system";
 
 @Component({
   selector: 'home-page',
@@ -14,6 +15,8 @@ export class HomeComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   dropDownOptions: any[];
+  selectedFile: File;
+  selectedFileName: File;
 
   constructor(
     private fb: FormBuilder,
@@ -42,7 +45,8 @@ export class HomeComponent implements OnInit {
       email: new FormControl(''),
       firstName: new FormControl(''),
       phoneNumber: new FormControl(''),
-      dropDown: new FormControl('')
+      dropDown: new FormControl(''),
+      file: new FormControl('')
     });
   }
 
@@ -58,6 +62,14 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  onFileSelected(event: any) {
+    this.selectedFile = <File>event.target.files[0];
+    this.selectedFileName = <File>event.target.files[0].name;
+    const fileType = <File>event.target.files[0].type;
+    console.log(this.selectedFile);
+    console.log(fileType);
+  }
+
   submitStepperForm() {
     console.log(this.firstFormGroup.value);
     console.log(this.secondFormGroup.value);
@@ -71,8 +83,8 @@ export class HomeComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.inputFormGroup.value)
-    this.dialog.open(FormSubmittedComponent)
+    console.log(this.inputFormGroup.value);
+    this.dialog.open(FormSubmittedComponent);
     this.reset();
   }
 }

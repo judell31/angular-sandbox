@@ -1,13 +1,9 @@
 @import "src/styles";
 
-.int-input {
-  margin-top: 50px;
-}
-
 .button-container {
   display: flex;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 
 .form {
@@ -20,14 +16,14 @@ mat-grid-tile {
 }
 
 .section {
-  margin-left: 20px;
+  margin-left: 2rem;
   margin-top: 5%;
   text-justify: auto;
   text-align: justify;
 }
 
 .text-width {
-  width: 500px;
+  width: 30rem;
 }
 
 .disabled {
@@ -52,11 +48,15 @@ lzy-button {
 }
 
 .mat-stepper-vertical {
-  margin-top: 8px;
+  margin-top: 1rem;
 }
 
 .mat-form-field {
-  margin-top: 16px;
+  margin-top: 1rem;
+}
+
+.file-input {
+  margin-top: 1rem;
 }
 
 @media (max-width: 900px) {
