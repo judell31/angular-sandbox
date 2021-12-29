@@ -4,14 +4,14 @@ import {AbstractControl, ControlContainer, FormGroupDirective} from "@angular/fo
 
 @Component({
   selector: 'lazy-file-input',
-  templateUrl: './file-input.component.html',
-  styleUrls: ['./file-input.component.css'],
+  templateUrl: './lazy-file-input.component.html',
+  styleUrls: ['./lazy-file-input.component.css'],
   viewProviders: [{
     provide: ControlContainer,
     useExisting: FormGroupDirective,
   }]
 })
-export class FileInputComponent implements OnInit {
+export class LazyFileInputComponent implements OnInit {
   @Input() controlName: string
   @Input() buttonLabel: string;
   @Input() btnEnabled: boolean = true;

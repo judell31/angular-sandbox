@@ -3,9 +3,9 @@ import {AbstractControl, ValidationErrors, ValidatorFn} from "@angular/forms";
 import {LazyInputComponent} from "../../components/inputs/lazy-input/lazy-input.component";
 
 @Directive({
-  selector: '[lzyEmail]'
+  selector: '[lazyEmail]'
 })
-export class LzyEmailDirective {
+export class LazyEmailDirective {
   emailPattern: RegExp = new RegExp("[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\.[a-z]{2,3}");
 
   constructor(

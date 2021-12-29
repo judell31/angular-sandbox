@@ -42,17 +42,29 @@ button:hover {
   cursor: pointer;
 }
 
-lzy-button {
-  width: 100%;
-  margin-right: 1rem;
-}
-
 .mat-stepper-vertical {
   margin-top: 1rem;
 }
 
+.stepper-btn {
+  margin-top: 1rem;
+}
+
+.stepper-reset-btn {
+  margin-left: 1rem;
+}
+
+lazy-back-stepper-button {
+  margin-left: 1rem;
+}
+
 .mat-form-field {
   margin-top: 1rem;
+}
+
+.primary-btn {
+  width: 100%;
+  margin-left: 1rem;
 }
 
 @media (max-width: 900px) {

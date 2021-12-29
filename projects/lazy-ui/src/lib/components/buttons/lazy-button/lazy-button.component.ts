@@ -1,11 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'lzy-button',
-  templateUrl: './lzy-button.component.html',
-  styleUrls: ['./lzy-button.component.css']
+  selector: 'lazy-button',
+  templateUrl: './lazy-button.component.html',
+  styleUrls: ['./lazy-button.component.css']
 })
-export class LzyButtonComponent implements OnInit {
+export class LazyButtonComponent implements OnInit {
   @Input() buttonLabel: string;
   @Input() btnEnabled: boolean = true;
 

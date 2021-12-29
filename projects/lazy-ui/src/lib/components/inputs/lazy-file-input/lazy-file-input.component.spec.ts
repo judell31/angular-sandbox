@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LzyButtonComponent } from './lzy-button.component';
+import { LazyFileInputComponent } from './lazy-file-input.component';
 
-describe('LzyButtonComponent', () => {
-  let component: LzyButtonComponent;
-  let fixture: ComponentFixture<LzyButtonComponent>;
+describe('FileInputComponent', () => {
+  let component: LazyFileInputComponent;
+  let fixture: ComponentFixture<LazyFileInputComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LzyButtonComponent ]
+      declarations: [ LazyFileInputComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LzyButtonComponent);
+    fixture = TestBed.createComponent(LazyFileInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,6 +1,7 @@
 <div>
   <div class="section">
     <h3>Material Form</h3>
+<!--    FixMe: the email and numbers directive is messing with form validation-->
     <form [formGroup]="inputFormGroup" class="form">
       <lazy-input
         appearance="fill"
@@ -39,25 +40,21 @@
       <lazy-input
         appearance="legacy"
         [label]="'Lzy Email'"
-        lzyEmail
+        lazyEmail
         [autoComplete]="'off'"
         [iconName]="'email'"
         hint="name@domain.com"
         [controlName]="'email'"
         [maxLength]="100"
-        [required]="true"
       >
       </lazy-input>
       <div class="button-container">
         <div class="buttons">
-          <ng-container *ngIf="inputFormGroup.invalid">
-            <lzy-button [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></lzy-button>
-          </ng-container>
-          <ng-container *ngIf="inputFormGroup.valid">
-            <lzy-button class="primary-btn" (click)="submit()" [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></lzy-button>
-          </ng-container>
-          <lzy-button class="primary-btn" (click)="log()" [btnEnabled]="true" buttonLabel="Log"></lzy-button>
-          <lzy-button class="primary-btn" (click)="reset()" [btnEnabled]="true" buttonLabel="Reset"></lzy-button>
+          <!--            FixMe: button styling issue: the margin are on different sides between button disable and enable-->
+          <!--            <lazy-button [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></lazy-button>-->
+          <lazy-button [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></lazy-button>
+          <lazy-button class="primary-btn" (click)="log()" buttonLabel="Log"></lazy-button>
+          <lazy-button class="primary-btn" (click)="reset()" buttonLabel="Reset"></lazy-button>
         </div>
       </div>
     </form>
@@ -84,8 +81,8 @@
                   [controlName]="'firstCtrl'"
                 >
                 </lazy-input>
-          <div>
-            <button type="button" mat-button matStepperNext>Next</button>
+          <div class="stepper-btn">
+            <lazy-next-stepper-button buttonLabel="Next"></lazy-next-stepper-button>
           </div>
         </form>
       </mat-step>
@@ -100,19 +97,20 @@
             [controlName]="'secondCtrl'"
           >
           </lazy-input>
-          <div>
-            <button type="button" mat-button matStepperPrevious>Back</button>
-            <button type="button" mat-button matStepperNext>Next</button>
+          <div class="stepper-btn">
+            <lazy-next-stepper-button buttonLabel="Next"></lazy-next-stepper-button>
+            <lazy-back-stepper-button buttonLabel="Back"></lazy-back-stepper-button>
           </div>
         </form>
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>Done</ng-template>
         <p>You are now done.</p>
-        <div>
-          <button type="button" mat-button (click)="submitStepperForm(); stepper.reset()">Submit</button>
-          <button type="button" mat-button matStepperPrevious>Back</button>
-          <button type="button" mat-button (click)="stepper.reset()">Reset</button>
+        <div class="stepper-btn">
+<!--          <button type="button" mat-button (click)="submitStepperForm(); stepper.reset()">Submit</button>-->
+          <lazy-button class="primary-btn stepper-submit" (click)="submitStepperForm(); stepper.reset()" buttonLabel="Submit"></lazy-button>
+          <lazy-back-stepper-button buttonLabel="Back"></lazy-back-stepper-button>
+          <lazy-button class="primary-btn stepper-reset-btn" (click)="stepper.reset()" buttonLabel="Reset"></lazy-button>
         </div>
       </mat-step>
     </mat-stepper>

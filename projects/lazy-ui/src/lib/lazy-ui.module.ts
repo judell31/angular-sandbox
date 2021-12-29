@@ -3,28 +3,28 @@ import {LazyInputComponent} from "./components/inputs/lazy-input/lazy-input.comp
 import {CommonModule} from "@angular/common";
 import {FormGroupDirective, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {PhoneNumberDirective} from "./directives/phone-number/phone-number.directive";
-import {LzyButtonComponent} from "./components/buttons/lzy-button/lzy-button.component";
-import {LzyEmailDirective} from "./directives/lzy-email/lzy-email.directive";
+import {LazyButtonComponent} from "./components/buttons/lazy-button/lazy-button.component";
+import {LazyEmailDirective} from "./directives/lazy-email/lazy-email.directive";
 import {MaterialModule} from "./material.module";
 import {NumbersDirective} from "./directives/numbers/numbers.directive";
 import {LazyDropDownComponent} from "./components/inputs/lazy-drop-down/lazy-drop-down.component";
-import {LzyNextStepperButtonComponent} from "./components/buttons/lzy-next-stepper-button/lzy-next-stepper-button.component";
-import {LzyBackStepperButtonComponent} from "./components/buttons/lzy-back-stepper-button/lzy-back-stepper-button.component";
+import {LazyNextStepperButtonComponent} from "./components/buttons/lazy-next-stepper-button/lazy-next-stepper-button.component";
+import {LazyBackStepperButtonComponent} from "./components/buttons/lazy-back-stepper-button/lazy-back-stepper-button.component";
 import {LazyNumberInputComponent} from "./components/inputs/lazy-number-input/lazy-number-input.component";
-import {FileInputComponent} from "./components/inputs/file-input/file-input.component";
+import {LazyFileInputComponent} from "./components/inputs/lazy-file-input/lazy-file-input.component";
 
 @NgModule({
   declarations: [
     LazyInputComponent,
-    LzyButtonComponent,
-    LzyEmailDirective,
+    LazyButtonComponent,
+    LazyEmailDirective,
     LazyNumberInputComponent,
     PhoneNumberDirective,
-    FileInputComponent,
+    LazyFileInputComponent,
     NumbersDirective,
     LazyDropDownComponent,
-    LzyNextStepperButtonComponent,
-    LzyBackStepperButtonComponent
+    LazyNextStepperButtonComponent,
+    LazyBackStepperButtonComponent
   ],
   imports: [
     CommonModule,
@@ -37,16 +37,16 @@ import {FileInputComponent} from "./components/inputs/file-input/file-input.comp
   ],
   exports: [
     LazyInputComponent,
-    LzyEmailDirective,
+    LazyEmailDirective,
     LazyDropDownComponent,
-    LzyButtonComponent,
+    LazyButtonComponent,
     LazyNumberInputComponent,
     LazyNumberInputComponent,
     PhoneNumberDirective,
-    FileInputComponent,
+    LazyFileInputComponent,
     NumbersDirective,
-    LzyNextStepperButtonComponent,
-    LzyBackStepperButtonComponent,
+    LazyNextStepperButtonComponent,
+    LazyBackStepperButtonComponent,
   ]
 })
 export class LazyUiModule { }

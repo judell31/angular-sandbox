@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LzyNextStepperButtonComponent } from './lzy-next-stepper-button.component';
+import { LazyNextStepperButtonComponent } from './lazy-next-stepper-button.component';
 
 describe('LzyNextStepperButtonComponent', () => {
-  let component: LzyNextStepperButtonComponent;
-  let fixture: ComponentFixture<LzyNextStepperButtonComponent>;
+  let component: LazyNextStepperButtonComponent;
+  let fixture: ComponentFixture<LazyNextStepperButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LzyNextStepperButtonComponent ]
+      declarations: [ LazyNextStepperButtonComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LzyNextStepperButtonComponent);
+    fixture = TestBed.createComponent(LazyNextStepperButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
