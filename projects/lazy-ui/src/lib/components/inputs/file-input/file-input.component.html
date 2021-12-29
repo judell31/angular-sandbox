@@ -1,0 +1,13 @@
+<input formControlName="{{controlName}}" type="file" class="file-input" hidden (change)="onFileSelected($event)" #fileUpload>
+<div class="file-upload">
+  <button type="button" mat-mini-fab class="upload-btn"
+          (click)="fileUpload.click()">
+    <mat-icon>{{matIcon}}</mat-icon>
+  </button>
+  <ng-container *ngIf="control?.value">
+    {{selectedFileName}}
+  </ng-container>
+  <ng-container *ngIf="!control?.value">
+    Upload a file
+  </ng-container>
+</div>

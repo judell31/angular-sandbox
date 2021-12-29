@@ -15,8 +15,6 @@ export class HomeComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   dropDownOptions: any[];
-  selectedFile: File;
-  selectedFileName: File;
 
   constructor(
     private fb: FormBuilder,
@@ -37,7 +35,7 @@ export class HomeComponent implements OnInit {
         name: "name1",
         value: "value1"
       }
-    ]
+    ];
   }
 
   inputForm() {
@@ -62,14 +60,6 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  onFileSelected(event: any) {
-    this.selectedFile = <File>event.target.files[0];
-    this.selectedFileName = <File>event.target.files[0].name;
-    const fileType = <File>event.target.files[0].type;
-    console.log(this.selectedFile);
-    console.log(fileType);
-  }
-
   submitStepperForm() {
     console.log(this.firstFormGroup.value);
     console.log(this.secondFormGroup.value);
@@ -80,6 +70,10 @@ export class HomeComponent implements OnInit {
 
   reset() {
     this.inputFormGroup.reset();
+  }
+
+  log() {
+    console.log(this.inputFormGroup.value);
   }
 
   submit(){

@@ -2,4 +2,17 @@
 
 A library of Angular Material reusable components
 
-Contains an input component, button component, phone number, numbers only, and email directives.
+### Components
+
+**Inputs**
+* Generic Input Field
+* Numbers Input Field
+
+**Buttons**
+* Generic Button
+* File Upload Button
+
+**Directives**
+* Phone Number
+* Numbers
+* Email

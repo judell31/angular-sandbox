@@ -12,8 +12,10 @@
         hint="This is a hint"
       >
       </lazy-input>
-      <input class="file-input" (change)="onFileSelected($event)" type="file" placeholder="File" formControlName="file">
-      <div>{{this.selectedFileName}}</div>
+      <lazy-file-input
+        [controlName]="'file'"
+        [matIcon]="'file_upload'"
+      ></lazy-file-input>
       <lazy-number-input
         appearance="legacy"
         label="Lzy Phone Number"
@@ -54,6 +56,7 @@
           <ng-container *ngIf="inputFormGroup.valid">
             <lzy-button class="primary-btn" (click)="submit()" [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></lzy-button>
           </ng-container>
+          <lzy-button class="primary-btn" (click)="log()" [btnEnabled]="true" buttonLabel="Log"></lzy-button>
           <lzy-button class="primary-btn" (click)="reset()" [btnEnabled]="true" buttonLabel="Reset"></lzy-button>
         </div>
       </div>
