@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit {
 
   log() {
     console.log(this.inputFormGroup.value);
-    console.log(this.inputFormGroup.valid);
+    console.log("Is form valid: " + this.inputFormGroup.valid);
   }
 
   submit(){
