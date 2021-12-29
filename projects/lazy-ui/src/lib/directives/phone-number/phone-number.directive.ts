@@ -1,4 +1,4 @@
-import {Directive, ElementRef, HostListener} from '@angular/core';
+import {Directive, ElementRef} from '@angular/core';
 import {AbstractControl, ValidationErrors, ValidatorFn} from "@angular/forms";
 import {LazyNumberInputComponent} from "../../components/inputs/lazy-number-input/lazy-number-input.component";
 
