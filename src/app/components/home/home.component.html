@@ -109,7 +109,6 @@
         <ng-template matStepLabel>Done</ng-template>
         <p>You are now done.</p>
         <div class="stepper-btn">
-<!--          <button type="button" mat-button (click)="submitStepperForm(); stepper.reset()">Submit</button>-->
           <lazy-button class="primary-btn stepper-submit" (click)="submitStepperForm(); stepper.reset()" buttonLabel="Submit"></lazy-button>
           <lazy-back-stepper-button buttonLabel="Back"></lazy-back-stepper-button>
           <lazy-button class="primary-btn stepper-reset-btn" (click)="stepper.reset()" buttonLabel="Reset"></lazy-button>
