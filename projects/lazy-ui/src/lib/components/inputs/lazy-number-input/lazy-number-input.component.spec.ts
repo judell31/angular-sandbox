@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { LazyNumberInputComponent } from './lazy-number-input.component';
+import {LazyNumberInputComponent} from './lazy-number-input.component';
 
 describe('LazyNumberInputComponent', () => {
   let component: LazyNumberInputComponent;

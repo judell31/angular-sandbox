@@ -1,4 +1,4 @@
-import { LazyEmailDirective } from './lazy-email.directive';
+import {LazyEmailDirective} from './lazy-email.directive';
 
 describe('LazyEmailDirective', () => {
   it('should create an instance', () => {

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { LazyFileInputComponent } from './lazy-file-input.component';
+import {LazyFileInputComponent} from './lazy-file-input.component';
 
 describe('FileInputComponent', () => {
   let component: LazyFileInputComponent;

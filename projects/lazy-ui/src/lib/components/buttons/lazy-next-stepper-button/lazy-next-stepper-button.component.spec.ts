@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { LazyNextStepperButtonComponent } from './lazy-next-stepper-button.component';
+import {LazyNextStepperButtonComponent} from './lazy-next-stepper-button.component';
 
 describe('LzyNextStepperButtonComponent', () => {
   let component: LazyNextStepperButtonComponent;

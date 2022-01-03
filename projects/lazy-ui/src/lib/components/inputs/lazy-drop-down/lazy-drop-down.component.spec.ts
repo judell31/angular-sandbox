@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { LazyDropDownComponent } from './lazy-drop-down.component';
+import {LazyDropDownComponent} from './lazy-drop-down.component';
 
 describe('LazyDropDownComponent', () => {
   let component: LazyDropDownComponent;

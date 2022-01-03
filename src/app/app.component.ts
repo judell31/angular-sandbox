@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {NavMenu} from "./models/navMenu";
-import {NavItem} from "./models/navItem";
 import {Router} from "@angular/router";
 
 @Component({
@@ -12,40 +11,30 @@ export class AppComponent implements OnInit {
 
   constructor(
     private navMenu: NavMenu,
-    private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.buildNav();
-
-    if (this.router.url === "/") {
-      this.router.navigate(["/home"]).then(() => {})
-    }
-  }
-
-  buildNav() {
-    let homeItem = new NavItem;
-    homeItem.text = "Home";
-    homeItem.link = "/home";
-    homeItem.icon = "home"
-    this.navMenu.navItems.push(homeItem);
-
-    let aboutItem = new NavItem;
-    aboutItem.text = "About";
-    aboutItem.link = "/about";
-    aboutItem.icon = "info"
-    this.navMenu.navItems.push(aboutItem);
-
-    let contactItem = new NavItem;
-    contactItem.text = "Contact";
-    contactItem.link = "/contact";
-    contactItem.icon = "person"
-    this.navMenu.navItems.push(contactItem);
-
-    let logoutItem = new NavItem;
-    logoutItem.text = "Logout";
-    logoutItem.link = "/logout";
-    logoutItem.icon = "logout"
-    this.navMenu.navItems.push(logoutItem);
+    this.navMenu.navItems = [
+      {
+        text: "Home",
+        link: "/home",
+        icon: "icon"
+      },
+      {
+        text: "About",
+        link: "/about",
+        icon: "info"
+      },
+      {
+        text: "Contact",
+        link: "/contact",
+        icon: "person"
+      },
+      {
+        text: "Logout",
+        link: "/logout",
+        icon: "logout"
+      }
+    ];
   }
 }
