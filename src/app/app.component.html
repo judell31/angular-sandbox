@@ -1,7 +1,9 @@
+<!--<app-nav (sideNavToggle)="sidenav.toggle()"></app-nav>-->
 <mat-sidenav-container>
   <mat-sidenav position="end" #sidenav role="navigation">
     <app-sidenav (closeSideNav)="sidenav.close()"></app-sidenav>
   </mat-sidenav>
+<!--  Works without mat sidenav content tag-->
   <mat-sidenav-content>
     <app-nav (sideNavToggle)="sidenav.toggle()"></app-nav>
     <main>

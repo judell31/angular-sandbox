@@ -32,8 +32,11 @@ a {
 
 .nav-container {
   background-color: $ngsbBlue;
-  color: white;
+  color: $ngsbWhite;
   width: 100%;
+  z-index: 1;
+  position: sticky;
+  top: 0;
 }
 
 .nav-items {
