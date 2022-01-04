@@ -5,9 +5,13 @@
     <mat-icon>{{matIcon}}</mat-icon>
   </button>
   <ng-container *ngIf="control?.value">
-    {{selectedFileName}}
+    <div class="file-upload-text" (click)="fileUpload.click()">
+      {{selectedFileName}}
+    </div>
   </ng-container>
   <ng-container *ngIf="!control?.value">
-    Upload a file
+    <div class="file-upload-text" (click)="fileUpload.click()">
+      Upload a file
+    </div>
   </ng-container>
 </div>
