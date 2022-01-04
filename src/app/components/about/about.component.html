@@ -1,14 +1,36 @@
 <div class="container">
+  <form [formGroup]="inputFormGroup">
+    <div class="row">
+      <div class="col-md-6">
+        <lazy-input
+          [required]="true"
+          [maxLength]="10"
+          label="Input"
+          [controlName]="'email'"
+        ></lazy-input>
+      </div>
+      <div class="col-md-6">
+        <lazy-input
+          [required]="true"
+          [maxLength]="10"
+          label="Input"
+          [controlName]="'firstName'"
+        ></lazy-input>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="container">
   <div class="row">
-    <div class="col-md-6">
-      test
+    <div class="items col-md-4" *ngFor="let item of arrayList">
+      {{item.name}}
     </div>
-    <div class="col-md-6">
-      <lazy-input
-        [required]="true"
-        [maxLength]="10"
-        label="Input"
-      ></lazy-input>
-    </div>
+  </div>
+</div>
+
+<div class="no-container row">
+  <div class="items col-md-4" *ngFor="let item of arrayList">
+    {{item.name}}
   </div>
 </div>

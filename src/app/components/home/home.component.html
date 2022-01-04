@@ -1,145 +1,205 @@
-<div>
-  <div class="section">
-    <h3>Material Form</h3>
-<!--    FixMe: the email and numbers directive is messing with form validation-->
-    <form [formGroup]="inputFormGroup" class="form">
-      <lazy-input
-        appearance="fill"
-        label="First Name"
-        [autoComplete]="'off'"
-        [maxLength]="100"
-        [iconName]="'account_circle'"
-        [controlName]="'firstName'"
-        hint="This is a hint"
-      >
-      </lazy-input>
-      <lazy-file-input
-        [controlName]="'file'"
-        [matIcon]="'file_upload'"
-      ></lazy-file-input>
-      <lazy-number-input
-        appearance="legacy"
-        label="Lzy Phone Number"
-        [autoComplete]="'off'"
-        hint="Example: 012-345-6789"
-        [maxLength]="10"
-        [type]="'tel'"
-        phoneNumber
-        [iconName]="'phone_android'"
-        [required]="true"
-        [controlName]="'phoneNumber'">
-      </lazy-number-input>
-      <lazy-drop-down
-        appearance="outline"
-        label="Drop Down"
-        [controlName]="'dropDown'"
-        [options]="dropDownOptions"
-        [iconName]="'phone_android'"
-        [required]="true"
-      >
-      </lazy-drop-down>
-      <lazy-input
-        appearance="legacy"
-        [label]="'Lzy Email'"
-        lazyEmail
-        [autoComplete]="'off'"
-        [iconName]="'email'"
-        hint="name@domain.com"
-        [controlName]="'email'"
-        [maxLength]="100"
-        [required]="true"
-      >
-      </lazy-input>
-      <div class="button-container">
-        <div class="buttons">
-          <!--            FixMe: button styling issue: the margin are on different sides between button disable and enable-->
-          <!--            <lazy-button [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></lazy-button>-->
-          <lazy-button [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></lazy-button>
-          <lazy-button class="primary-btn" (click)="log()" buttonLabel="Log"></lazy-button>
-          <lazy-button class="primary-btn" (click)="reset()" buttonLabel="Reset"></lazy-button>
-        </div>
+<div class="section">
+  <h3>Material Form</h3>
+  <form [formGroup]="inputFormGroup">
+    <div class="row">
+      <div class="col-md-4">
+        <lazy-input
+          appearance="fill"
+          label="First Name"
+          [autoComplete]="'off'"
+          [maxLength]="100"
+          [iconName]="'account_circle'"
+          [controlName]="'firstName'"
+          hint="This is a hint"
+        >
+        </lazy-input>
+        <lazy-file-input
+          [controlName]="'file'"
+          [matIcon]="'file_upload'"
+        ></lazy-file-input>
+        <lazy-number-input
+          appearance="legacy"
+          label="Lzy Phone Number"
+          [autoComplete]="'off'"
+          hint="Example: 012-345-6789"
+          [maxLength]="10"
+          [type]="'tel'"
+          [iconName]="'phone_android'"
+          [controlName]="'phoneNumber'">
+        </lazy-number-input>
+        <lazy-drop-down
+          appearance="outline"
+          label="Drop Down"
+          [controlName]="'dropDown'"
+          [options]="dropDownOptions"
+          [iconName]="'phone_android'"
+          [required]="true"
+        >
+        </lazy-drop-down>
+        <lazy-input
+          appearance="legacy"
+          [label]="'Lzy Email'"
+          [autoComplete]="'off'"
+          [iconName]="'email'"
+          hint="name@domain.com"
+          [controlName]="'email'"
+          [maxLength]="100"
+        >
+        </lazy-input>
       </div>
-    </form>
-  </div>
-
-  <div class="section">
-    <h3>Material Form Stepper</h3>
-
-<!--    <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">-->
-<!--      {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}-->
-<!--    </button>-->
-    <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
-      <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup">
-          <ng-template matStepLabel>Fill out your name</ng-template>
-                <lazy-input
-                  appearance="standard"
-                  label="First Name"
-                  [autoComplete]="'off'"
-                  [maxLength]="100"
-                  hint="Example: James Jones"
-                  [required]="true"
-                  [iconName]="'account_circle'"
-                  [controlName]="'firstCtrl'"
-                >
-                </lazy-input>
-          <div class="stepper-btn">
-            <lazy-next-stepper-button buttonLabel="Next"></lazy-next-stepper-button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="secondFormGroup">
-        <form [formGroup]="secondFormGroup">
-          <ng-template matStepLabel>Fill out your address</ng-template>
-          <lazy-input
-            label="Address"
-            [autoComplete]="'off'"
-            [maxLength]="100"
-            [iconName]="'account_circle'"
-            [controlName]="'secondCtrl'"
-          >
-          </lazy-input>
-          <div class="stepper-btn">
-            <lazy-next-stepper-button buttonLabel="Next"></lazy-next-stepper-button>
-            <lazy-back-stepper-button buttonLabel="Back"></lazy-back-stepper-button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
-        <div class="stepper-btn">
-          <lazy-button class="primary-btn stepper-submit" (click)="submitStepperForm(); stepper.reset()" buttonLabel="Submit"></lazy-button>
-          <lazy-back-stepper-button buttonLabel="Back"></lazy-back-stepper-button>
-          <lazy-button class="primary-btn stepper-reset-btn" (click)="stepper.reset()" buttonLabel="Reset"></lazy-button>
-        </div>
-      </mat-step>
-    </mat-stepper>
-
-  </div>
-
-  <div class="section">
-    <h3>Drag and Drop</h3>
-  </div>
-
-  <div class="section">
-    <h3>Menus</h3>
-  </div>
-
-  <div class="section">
-    <h3>Text Justify</h3>
-    <div class="text-width">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla p</div>
-  </div>
-
-  <div class="section">
-    <h3>Material Grid</h3>
-
-    <mat-grid-list cols="4" rowHeight="1:0.1" gutterSize="0.5rem">
-      <mat-grid-tile>1</mat-grid-tile>
-      <mat-grid-tile>2</mat-grid-tile>
-      <mat-grid-tile>3</mat-grid-tile>
-      <mat-grid-tile>4</mat-grid-tile>
-      <mat-grid-tile>4</mat-grid-tile>
-    </mat-grid-list>
-  </div>
+    </div>
+    <div class="button-container row">
+      <div class="ngsb-buttons col-md-4">
+        <lazy-button class="primary-btn" [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></lazy-button>
+        <lazy-button class="primary-btn" (click)="log()" buttonLabel="Log"></lazy-button>
+        <lazy-button class="primary-btn" (click)="reset()" buttonLabel="Reset"></lazy-button>
+      </div>
+    </div>
+  </form>
 </div>
+
+<!--<div>-->
+<!--  <div class="section">-->
+<!--    <h3>Material Form</h3>-->
+<!--&lt;!&ndash;    FixMe: the email and numbers directive is messing with form validation&ndash;&gt;-->
+<!--    <form [formGroup]="inputFormGroup" class="form">-->
+<!--      <lazy-input-->
+<!--        appearance="fill"-->
+<!--        label="First Name"-->
+<!--        [autoComplete]="'off'"-->
+<!--        [maxLength]="100"-->
+<!--        [iconName]="'account_circle'"-->
+<!--        [controlName]="'firstName'"-->
+<!--        hint="This is a hint"-->
+<!--      >-->
+<!--      </lazy-input>-->
+<!--      <lazy-file-input-->
+<!--        [controlName]="'file'"-->
+<!--        [matIcon]="'file_upload'"-->
+<!--      ></lazy-file-input>-->
+<!--      <lazy-number-input-->
+<!--        appearance="legacy"-->
+<!--        label="Lzy Phone Number"-->
+<!--        [autoComplete]="'off'"-->
+<!--        hint="Example: 012-345-6789"-->
+<!--        [maxLength]="10"-->
+<!--        [type]="'tel'"-->
+<!--        phoneNumber-->
+<!--        [iconName]="'phone_android'"-->
+<!--        [required]="true"-->
+<!--        [controlName]="'phoneNumber'">-->
+<!--      </lazy-number-input>-->
+<!--      <lazy-drop-down-->
+<!--        appearance="outline"-->
+<!--        label="Drop Down"-->
+<!--        [controlName]="'dropDown'"-->
+<!--        [options]="dropDownOptions"-->
+<!--        [iconName]="'phone_android'"-->
+<!--        [required]="true"-->
+<!--      >-->
+<!--      </lazy-drop-down>-->
+<!--      <lazy-input-->
+<!--        appearance="legacy"-->
+<!--        [label]="'Lzy Email'"-->
+<!--        lazyEmail-->
+<!--        [autoComplete]="'off'"-->
+<!--        [iconName]="'email'"-->
+<!--        hint="name@domain.com"-->
+<!--        [controlName]="'email'"-->
+<!--        [maxLength]="100"-->
+<!--        [required]="true"-->
+<!--      >-->
+<!--      </lazy-input>-->
+<!--      <div class="button-container">-->
+<!--        <div class="buttons">-->
+<!--          &lt;!&ndash;            FixMe: button styling issue: the margin are on different sides between button disable and enable&ndash;&gt;-->
+<!--          &lt;!&ndash;            <lazy-button [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></lazy-button>&ndash;&gt;-->
+<!--          <lazy-button [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></lazy-button>-->
+<!--          <lazy-button class="primary-btn" (click)="log()" buttonLabel="Log"></lazy-button>-->
+<!--          <lazy-button class="primary-btn" (click)="reset()" buttonLabel="Reset"></lazy-button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </form>-->
+<!--  </div>-->
+
+<!--  <div class="section">-->
+<!--    <h3>Material Form Stepper</h3>-->
+
+<!--&lt;!&ndash;    <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">&ndash;&gt;-->
+<!--&lt;!&ndash;      {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}&ndash;&gt;-->
+<!--&lt;!&ndash;    </button>&ndash;&gt;-->
+<!--    <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>-->
+<!--      <mat-step [stepControl]="firstFormGroup">-->
+<!--        <form [formGroup]="firstFormGroup">-->
+<!--          <ng-template matStepLabel>Fill out your name</ng-template>-->
+<!--                <lazy-input-->
+<!--                  appearance="standard"-->
+<!--                  label="First Name"-->
+<!--                  [autoComplete]="'off'"-->
+<!--                  [maxLength]="100"-->
+<!--                  hint="Example: James Jones"-->
+<!--                  [required]="true"-->
+<!--                  [iconName]="'account_circle'"-->
+<!--                  [controlName]="'firstCtrl'"-->
+<!--                >-->
+<!--                </lazy-input>-->
+<!--          <div class="stepper-btn">-->
+<!--            <lazy-next-stepper-button buttonLabel="Next"></lazy-next-stepper-button>-->
+<!--          </div>-->
+<!--        </form>-->
+<!--      </mat-step>-->
+<!--      <mat-step [stepControl]="secondFormGroup">-->
+<!--        <form [formGroup]="secondFormGroup">-->
+<!--          <ng-template matStepLabel>Fill out your address</ng-template>-->
+<!--          <lazy-input-->
+<!--            label="Address"-->
+<!--            [autoComplete]="'off'"-->
+<!--            [maxLength]="100"-->
+<!--            [iconName]="'account_circle'"-->
+<!--            [controlName]="'secondCtrl'"-->
+<!--          >-->
+<!--          </lazy-input>-->
+<!--          <div class="stepper-btn">-->
+<!--            <lazy-next-stepper-button buttonLabel="Next"></lazy-next-stepper-button>-->
+<!--            <lazy-back-stepper-button buttonLabel="Back"></lazy-back-stepper-button>-->
+<!--          </div>-->
+<!--        </form>-->
+<!--      </mat-step>-->
+<!--      <mat-step>-->
+<!--        <ng-template matStepLabel>Done</ng-template>-->
+<!--        <p>You are now done.</p>-->
+<!--        <div class="stepper-btn">-->
+<!--          <lazy-button class="primary-btn stepper-submit" (click)="submitStepperForm(); stepper.reset()" buttonLabel="Submit"></lazy-button>-->
+<!--          <lazy-back-stepper-button buttonLabel="Back"></lazy-back-stepper-button>-->
+<!--          <lazy-button class="primary-btn stepper-reset-btn" (click)="stepper.reset()" buttonLabel="Reset"></lazy-button>-->
+<!--        </div>-->
+<!--      </mat-step>-->
+<!--    </mat-stepper>-->
+
+<!--  </div>-->
+
+<!--  <div class="section">-->
+<!--    <h3>Drag and Drop</h3>-->
+<!--  </div>-->
+
+<!--  <div class="section">-->
+<!--    <h3>Menus</h3>-->
+<!--  </div>-->
+
+<!--  <div class="section">-->
+<!--    <h3>Text Justify</h3>-->
+<!--    <div class="text-width">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla p</div>-->
+<!--  </div>-->
+
+<!--  <div class="section">-->
+<!--    <h3>Material Grid</h3>-->
+
+<!--    <mat-grid-list cols="4" rowHeight="1:0.1" gutterSize="0.5rem">-->
+<!--      <mat-grid-tile>1</mat-grid-tile>-->
+<!--      <mat-grid-tile>2</mat-grid-tile>-->
+<!--      <mat-grid-tile>3</mat-grid-tile>-->
+<!--      <mat-grid-tile>4</mat-grid-tile>-->
+<!--      <mat-grid-tile>4</mat-grid-tile>-->
+<!--    </mat-grid-list>-->
+<!--  </div>-->
+<!--</div>-->

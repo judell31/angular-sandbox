@@ -1,8 +1,6 @@
 @import "src/styles";
 
 .button-container {
-  display: flex;
-  width: 100%;
   margin-top: 2rem;
 }
 
@@ -16,10 +14,7 @@ mat-grid-tile {
 }
 
 .section {
-  margin-left: 2rem;
-  margin-top: 5%;
-  text-justify: auto;
-  text-align: justify;
+  margin: 2% 2%;
 }
 
 .text-width {
@@ -34,16 +29,16 @@ mat-grid-tile {
   background-color: $ngsbOffWhite;
 }
 
-.buttons {
-  display: flex;
-}
-
 button:hover {
   cursor: pointer;
 }
 
 .mat-stepper-vertical {
   margin-top: 1rem;
+}
+.ngsb-buttons {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .stepper-btn {
@@ -63,12 +58,5 @@ lazy-back-stepper-button {
 }
 
 .primary-btn {
-  width: 100%;
   margin-left: 1rem;
-}
-
-@media (max-width: 900px) {
-  .buttons {
-    width: 50%;
-  }
 }

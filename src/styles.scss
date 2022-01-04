@@ -58,18 +58,13 @@ button:hover {
 
 .mat-form-field-underline {
   height: 1px !important;
-  //width: 100% !important;
 }
 
 .mat-form-field {
-  font-size: 16px !important;
+  font-size: 1rem !important;
+  width: 100% !important;
 }
 
 .file-upload {
   margin-top: 2rem !important;
-}
-
-.inactive-btn {
-  width: 100% !important;
-  margin-right: 1rem !important;
 }
