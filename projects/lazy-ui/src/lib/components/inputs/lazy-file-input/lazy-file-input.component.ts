@@ -16,6 +16,7 @@ export class LazyFileInputComponent implements OnInit {
   @Input() buttonLabel: string;
   @Input() btnEnabled: boolean = true;
   @Input() matIcon: string;
+  @Input() style: string;
 
   selectedFile: File;
   selectedFileName: File;

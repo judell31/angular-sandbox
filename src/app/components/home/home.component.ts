@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit {
     console.log("Is form valid: " + this.inputFormGroup.valid);
   }
 
-  submit(){
+  send(){
     console.log(this.inputFormGroup.value);
     this.dialog.open(FormSubmittedComponent);
     this.reset();

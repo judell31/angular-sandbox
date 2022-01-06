@@ -50,7 +50,12 @@
     </div>
     <div class="button-container row">
       <div class="ngsb-buttons col-md-4">
-        <lazy-button class="primary-btn" [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></lazy-button>
+        <ng-container *ngIf="inputFormGroup.valid">
+          <lazy-button class="primary-btn" (click)="send()" [btnEnabled]="true" buttonLabel="Send"></lazy-button>
+        </ng-container>
+        <ng-container *ngIf="!inputFormGroup.valid">
+          <lazy-button class="primary-btn" [btnEnabled]="false" buttonLabel="Send"></lazy-button>
+        </ng-container>
         <lazy-button class="primary-btn" (click)="log()" buttonLabel="Log"></lazy-button>
         <lazy-button class="primary-btn" (click)="reset()" buttonLabel="Reset"></lazy-button>
       </div>
