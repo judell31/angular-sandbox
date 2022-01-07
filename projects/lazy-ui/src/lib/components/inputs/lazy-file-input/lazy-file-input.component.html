@@ -2,7 +2,7 @@
 <div class="file-upload">
   <button type="button" mat-mini-fab class="upload-btn"
           (click)="fileUpload.click()">
-    <mat-icon>{{matIcon}}</mat-icon>
+    <mat-icon class="upload-icon">{{matIcon}}</mat-icon>
   </button>
   <ng-container *ngIf="control?.value">
     <div class="file-upload-text" (click)="fileUpload.click()">
