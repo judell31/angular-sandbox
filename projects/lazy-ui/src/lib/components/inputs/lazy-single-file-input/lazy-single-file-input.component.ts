@@ -8,14 +8,14 @@ import {
 
 @Component({
   selector: 'lazy-single-file-input',
-  templateUrl: './lazy-file-input.component.html',
-  styleUrls: ['./lazy-file-input.component.css'],
+  templateUrl: './lazy-single-file-input.component.html',
+  styleUrls: ['./lazy-single-file-input.component.css'],
   viewProviders: [{
     provide: ControlContainer,
     useExisting: FormGroupDirective,
   }]
 })
-export class LazyFileInputComponent implements OnInit {
+export class LazySingleFileInputComponent implements OnInit {
   @Input() controlName: string
   @Input() buttonLabel: string;
   @Input() btnEnabled: boolean = true;

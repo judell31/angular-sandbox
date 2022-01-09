@@ -11,7 +11,7 @@ import {LazyDropDownComponent} from "./components/inputs/lazy-drop-down/lazy-dro
 import {LazyNextStepperButtonComponent} from "./components/buttons/lazy-next-stepper-button/lazy-next-stepper-button.component";
 import {LazyBackStepperButtonComponent} from "./components/buttons/lazy-back-stepper-button/lazy-back-stepper-button.component";
 import {LazyNumberInputComponent} from "./components/inputs/lazy-number-input/lazy-number-input.component";
-import {LazyFileInputComponent} from "./components/inputs/lazy-file-input/lazy-file-input.component";
+import {LazySingleFileInputComponent} from "./components/inputs/lazy-single-file-input/lazy-single-file-input.component";
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import {LazyFileInputComponent} from "./components/inputs/lazy-file-input/lazy-f
     LazyEmailDirective,
     LazyNumberInputComponent,
     PhoneNumberDirective,
-    LazyFileInputComponent,
+    LazySingleFileInputComponent,
     NumbersDirective,
     LazyDropDownComponent,
     LazyNextStepperButtonComponent,
@@ -43,7 +43,7 @@ import {LazyFileInputComponent} from "./components/inputs/lazy-file-input/lazy-f
     LazyNumberInputComponent,
     LazyNumberInputComponent,
     PhoneNumberDirective,
-    LazyFileInputComponent,
+    LazySingleFileInputComponent,
     NumbersDirective,
     LazyNextStepperButtonComponent,
     LazyBackStepperButtonComponent,
