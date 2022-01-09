@@ -15,6 +15,9 @@ export class HomeComponent implements OnInit {
   secondFormGroup: FormGroup;
   dropDownOptions: any[];
   sixteenMb: number = 16777216;
+  selectedFiles: FileList;
+  selectedFileArray: File[] = [];
+  fileType: string;
 
   constructor(
     private fb: FormBuilder,
@@ -44,7 +47,8 @@ export class HomeComponent implements OnInit {
       firstName: new FormControl(''),
       phoneNumber: new FormControl(''),
       dropDown: new FormControl(''),
-      singleFile: new FormControl('')
+      singleFile: new FormControl(''),
+      multiFile: new FormControl(this.selectedFileArray),
     });
   }
 
@@ -69,12 +73,20 @@ export class HomeComponent implements OnInit {
   }
 
   reset() {
+    this.selectedFileArray = [];
     this.inputFormGroup.reset();
   }
 
   log() {
     console.log(this.inputFormGroup.value);
-    console.log("Is form valid: " + this.inputFormGroup.valid);
+  }
+
+  onFileSelect(event: any) {
+    this.selectedFiles = <FileList>event.target.files;
+
+    for (let i = 0; i < this.selectedFiles.length; i++) {
+      this.selectedFileArray.push(this.selectedFiles[i]);
+    }
   }
 
   send(){

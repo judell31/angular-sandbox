@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {NavMenu} from "./models/navMenu";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',

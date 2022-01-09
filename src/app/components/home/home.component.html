@@ -22,6 +22,17 @@
           [maxSizeDescription]="'Max file size 16MB'"
           [matIcon]="'file_upload'"
         ></lazy-single-file-input>
+        <lazy-multi-file-input
+          [controlName]="'multiFile'"
+          [name]="'Upload files'"
+          [fileType]="'application/pdf, text/plain'"
+          [style]="'upload-area'"
+          [triggerFileSelectFunc]="onFileSelect"
+          [selectedFileArray]="selectedFileArray"
+          [maxFileSize]="sixteenMb"
+          [maxSizeDescription]="'Max file size 16MB'"
+          [matIcon]="'file_upload'"
+        ></lazy-multi-file-input>
         <lazy-number-input
           appearance="legacy"
           label="Lzy Phone Number"

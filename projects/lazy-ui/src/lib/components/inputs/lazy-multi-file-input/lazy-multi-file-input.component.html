@@ -1,0 +1,43 @@
+<input
+  formControlName="{{controlName}}"
+  hidden
+  type="file"
+  multiple
+  accept="{{fileType}}"
+  class="file-input"
+  (change)="triggerFileSelect($event)"
+  #fileUpload>
+<ng-container *ngIf="style === 'upload-button'">
+  <div class="file-upload">
+    <button type="button" mat-mini-fab class="upload-btn"
+            (click)="fileUpload.click()">
+      <mat-icon class="upload-icon">{{matIcon}}</mat-icon>
+    </button>
+    <div class="file-upload-text" (click)="fileUpload.click()">
+      {{name}}
+    </div>
+  </div>
+  <ng-container *ngIf="control?.value">
+    <div *ngFor="let selectedFile of selectedFileArray">
+      <div>{{selectedFile.name}}</div>
+    </div>
+  </ng-container>
+  <div class="error-msg">{{errorMessage}}</div>
+</ng-container>
+<ng-container *ngIf="style === 'upload-area'">
+  <div>
+    <div>{{maxSizeDescription}}</div>
+    <div class="upload-file-container">
+      <div class="upload-file" (click)="fileUpload.click()">
+        <mat-icon class="upload-file-icon">{{matIcon}}</mat-icon>
+        <div class="upload-file-text">{{name}}</div>
+      </div>
+      <ng-container *ngIf="control?.value">
+        <div *ngFor="let selectedFile of selectedFileArray">
+          <div>{{selectedFile.name}}</div>
+        </div>
+      </ng-container>
+      <div class="error-msg">{{errorMessage}}</div>
+    </div>
+  </div>
+</ng-container>
