@@ -14,7 +14,6 @@ describe('NumbersOnlyDirective', () => {
     }).compileComponents();
   });
 
-  //Todo: Cover this when tests are implemented
   it('should create an instance', () => {
     // const directive = new NumbersDirective();
     // expect(directive).toBeTruthy();

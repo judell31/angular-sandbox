@@ -13,11 +13,15 @@
           hint="This is a hint"
         >
         </lazy-input>
-        <lazy-file-input
-          [controlName]="'file'"
+        <lazy-single-file-input
+          [controlName]="'singleFile'"
           [name]="'Upload a file'"
+          [fileType]="'application/pdf'"
+          [style]="'upload-area'"
+          [maxFileSize]="sixteenMb"
+          [maxSizeDescription]="'Max file size 16MB'"
           [matIcon]="'file_upload'"
-        ></lazy-file-input>
+        ></lazy-single-file-input>
         <lazy-number-input
           appearance="legacy"
           label="Lzy Phone Number"
@@ -118,7 +122,6 @@
 <!--      </lazy-input>-->
 <!--      <div class="button-container">-->
 <!--        <div class="buttons">-->
-<!--          &lt;!&ndash;            FixMe: button styling issue: the margin are on different sides between button disable and enable&ndash;&gt;-->
 <!--          &lt;!&ndash;            <lazy-button [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></lazy-button>&ndash;&gt;-->
 <!--          <lazy-button [btnEnabled]="inputFormGroup.valid" buttonLabel="Submit"></lazy-button>-->
 <!--          <lazy-button class="primary-btn" (click)="log()" buttonLabel="Log"></lazy-button>-->

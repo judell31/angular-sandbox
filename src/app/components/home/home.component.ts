@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   dropDownOptions: any[];
+  sixteenMb: number = 16777216;
 
   constructor(
     private fb: FormBuilder,
@@ -43,7 +44,7 @@ export class HomeComponent implements OnInit {
       firstName: new FormControl(''),
       phoneNumber: new FormControl(''),
       dropDown: new FormControl(''),
-      file: new FormControl('')
+      singleFile: new FormControl('')
     });
   }
 

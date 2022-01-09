@@ -1,9 +1,13 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {File} from "@angular/compiler-cli/src/ngtsc/file_system/testing/src/mock_file_system";
-import {AbstractControl, ControlContainer, FormGroupDirective} from "@angular/forms";
+import {
+  AbstractControl,
+  ControlContainer,
+  FormGroupDirective,
+  ValidatorFn
+} from "@angular/forms";
 
 @Component({
-  selector: 'lazy-file-input',
+  selector: 'lazy-single-file-input',
   templateUrl: './lazy-file-input.component.html',
   styleUrls: ['./lazy-file-input.component.css'],
   viewProviders: [{
@@ -18,10 +22,16 @@ export class LazyFileInputComponent implements OnInit {
   @Input() matIcon: string;
   @Input() style: string;
   @Input() name: string;
+  @Input() required: boolean;
+  @Input() maxFileSize: number;
+  @Input() maxSizeDescription: string;
+  @Input() fileType: string;
 
   selectedFile: File;
   selectedFileName: File;
   control: AbstractControl | null | undefined;
+  validators: ValidatorFn[] = [];
+  errorMessage: string;
 
   constructor(
     private controlContainer: ControlContainer
@@ -33,6 +43,6 @@ export class LazyFileInputComponent implements OnInit {
 
   onFileSelected(event: any) {
     this.selectedFile = <File>event.target.files[0];
-    this.selectedFileName = <File>event.target.files[0].name;
+    this.selectedFileName = <File>event.target.files[0]?.name;
   }
 }
