@@ -19,7 +19,7 @@
     </ng-container>
     <ng-container *ngIf="!control?.value">
       <div class="file-upload-text" (click)="fileUpload.click()">
-        {{name}}
+        {{name}}<span *ngIf="required" class="required">*</span>
       </div>
     </ng-container>
   </div>
@@ -32,7 +32,9 @@
       <div class="upload-file" (click)="fileUpload.click()">
         <mat-icon class="upload-file-icon">{{matIcon}}</mat-icon>
         <div *ngIf="control?.value" class="upload-file-text">{{selectedFileName}}</div>
-        <div *ngIf="!control?.value" class="upload-file-text">{{name}}</div>
+        <div *ngIf="!control?.value" class="upload-file-text">
+          {{name}}<span *ngIf="required" class="required">*</span>
+        </div>
       </div>
       <div class="error-msg">{{errorMessage}}</div>
     </div>

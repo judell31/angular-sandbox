@@ -14,7 +14,7 @@
       <mat-icon class="upload-icon">{{matIcon}}</mat-icon>
     </button>
     <div class="file-upload-text" (click)="fileUpload.click()">
-      {{name}}
+      {{name}}<span *ngIf="required" class="required">*</span>
     </div>
     <div (click)="removeAllFiles()" class="reset-icon-container"><mat-icon class="reset-icon">restart_alt</mat-icon></div>
   </div>
@@ -25,7 +25,7 @@
       <mat-icon (click)="removeFile(selectedFile.name)" class="icon">cancel</mat-icon>
     </div>
   </ng-container>
-  <div class="error-msg">{{errorMessage}}</div>
+  <div class="error-msg">Error</div>
 </ng-container>
 <ng-container *ngIf="style === 'upload-area'">
   <div>
@@ -36,7 +36,9 @@
     <div class="upload-file-container">
       <div class="upload-file" (click)="fileUpload.click()">
         <mat-icon class="upload-file-icon">{{matIcon}}</mat-icon>
-        <div class="upload-file-text">{{name}}</div>
+        <div class="upload-file-text">
+          {{name}}<span *ngIf="required" class="required">*</span>
+        </div>
       </div>
       <ng-container *ngIf="control?.value">
         <div class="selected-files" *ngFor="let selectedFile of selectedFileArray">
@@ -44,7 +46,7 @@
           <mat-icon (click)="removeFile(selectedFile.name)" class="icon">cancel</mat-icon>
         </div>
       </ng-container>
-      <div class="error-msg">{{errorMessage}}</div>
+      <div class="error-msg">Error</div>
     </div>
   </div>
 </ng-container>
