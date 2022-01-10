@@ -19,6 +19,7 @@ export class LazyMultiFileInputComponent implements OnInit {
   @Input() name: string;
   @Input() required: boolean;
   @Input() maxFileSize: number;
+  @Input() maxFiles: number;
   @Input() maxSizeDescription: string;
   @Input() fileType: string;
   @Input() triggerFileSelectFunc: Function;
