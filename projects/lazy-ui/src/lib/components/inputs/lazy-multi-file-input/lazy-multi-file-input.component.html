@@ -5,7 +5,9 @@
   multiple
   accept="{{fileType}}"
   class="file-input"
-  (change)="triggerFileSelect($event)"
+  (change)="triggerFileSelect($event); setErrorMessage();"
+  (click)="setErrorMessage()"
+  (blur)="setErrorMessage()"
   #fileUpload>
 <ng-container *ngIf="style === 'upload-button'">
   <div class="file-upload">
@@ -16,16 +18,16 @@
     <div class="file-upload-text" (click)="fileUpload.click()">
       {{name}}<span *ngIf="required" class="required">*</span>
     </div>
-    <div (click)="removeAllFiles()" class="reset-icon-container"><mat-icon class="reset-icon">restart_alt</mat-icon></div>
+    <div (click)="removeAllFiles(); setErrorMessage()" class="reset-icon-container"><mat-icon class="reset-icon">restart_alt</mat-icon></div>
   </div>
   <div>{{maxSizeDescription}}</div>
   <ng-container *ngIf="control?.value">
     <div class="selected-files" *ngFor="let selectedFile of selectedFileArray">
       <div>{{selectedFile.name}}</div>
-      <mat-icon (click)="removeFile(selectedFile.name)" class="icon">cancel</mat-icon>
+      <mat-icon (click)="removeFile(selectedFile.name); setErrorMessage()" class="icon">cancel</mat-icon>
     </div>
   </ng-container>
-  <div class="error-msg">Error</div>
+  <div *ngIf="!isControlValid()" class="error-msg">{{errorMessage}}</div>
 </ng-container>
 <ng-container *ngIf="style === 'upload-area'">
   <div>
@@ -43,10 +45,10 @@
       <ng-container *ngIf="control?.value">
         <div class="selected-files" *ngFor="let selectedFile of selectedFileArray">
           <div>{{selectedFile.name}}</div>
-          <mat-icon (click)="removeFile(selectedFile.name)" class="icon">cancel</mat-icon>
+          <mat-icon (click)="removeFile(selectedFile.name); setErrorMessage()" class="icon">cancel</mat-icon>
         </div>
       </ng-container>
-      <div class="error-msg">Error</div>
+      <div *ngIf="!isControlValid()" class="error-msg">{{errorMessage}}</div>
     </div>
   </div>
 </ng-container>

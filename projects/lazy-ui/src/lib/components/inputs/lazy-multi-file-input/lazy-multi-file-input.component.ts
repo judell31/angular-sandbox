@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {AbstractControl, ControlContainer, FormGroupDirective, ValidatorFn} from "@angular/forms";
+import {AbstractControl, ControlContainer, FormGroupDirective, ValidatorFn, Validators} from "@angular/forms";
 
 @Component({
   selector: 'lazy-multi-file-input',
@@ -35,6 +35,38 @@ export class LazyMultiFileInputComponent implements OnInit {
 
   ngOnInit(): void {
     this.control = this.controlContainer.control?.get(this.controlName);
+
+    if (this.required) {
+      this.validators.push(Validators.required);
+    }
+
+   this.updateValidators();
+  }
+
+  isControlValid() {
+    return (this.control?.dirty || this.control?.touched) && this.control.invalid;
+  }
+
+  setErrorMessage() {
+    if (this.hasError('required')) {
+      this.errorMessage = 'This field is required ';
+    }
+    // else if (this.selectedFileArray.length > 10) {
+    //   this.control?.setErrors({"err": true})
+    //   this.errorMessage = "Cannot upload more than 10 files"
+    // }
+    else {
+      this.errorMessage = ""
+    }
+  }
+
+  hasError(type: string) {
+    return this.control?.errors !== null && this.control?.errors[type];
+  }
+
+  updateValidators() {
+    this.control?.setValidators(this.validators);
+    this.control?.updateValueAndValidity();
   }
 
   removeAllFiles() {
