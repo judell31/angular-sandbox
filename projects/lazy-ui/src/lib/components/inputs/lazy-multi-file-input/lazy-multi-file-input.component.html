@@ -18,9 +18,10 @@
     </div>
   </div>
   <ng-container *ngIf="control?.value">
-    <div *ngFor="let selectedFile of selectedFileArray">
+    <div class="selected-files" *ngFor="let selectedFile of selectedFileArray">
       <div>{{selectedFile.name}}</div>
     </div>
+    <mat-icon class="icon">cancel</mat-icon>
   </ng-container>
   <div class="error-msg">{{errorMessage}}</div>
 </ng-container>
@@ -33,8 +34,9 @@
         <div class="upload-file-text">{{name}}</div>
       </div>
       <ng-container *ngIf="control?.value">
-        <div *ngFor="let selectedFile of selectedFileArray">
+        <div class="selected-files" *ngFor="let selectedFile of selectedFileArray">
           <div>{{selectedFile.name}}</div>
+          <mat-icon class="icon">cancel</mat-icon>
         </div>
       </ng-container>
       <div class="error-msg">{{errorMessage}}</div>

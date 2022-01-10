@@ -13,11 +13,25 @@
   height: 100%;
 }
 
+.icon {
+  margin-left: 0.5rem;
+  color: red;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
 .file-upload-text {
   margin-left: 1rem;
   display: flex;
   cursor: pointer;
   align-items: center;
+}
+
+.selected-files {
+  display: flex;
+  margin-top: 1rem;
 }
 
 .upload-file {
