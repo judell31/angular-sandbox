@@ -79,6 +79,7 @@ export class HomeComponent implements OnInit {
 
   log() {
     console.log(this.inputFormGroup.value);
+    console.log(this.selectedFileArray);
   }
 
   onFileSelect(event: any) {

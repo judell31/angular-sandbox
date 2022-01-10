@@ -36,6 +36,20 @@ export class LazyMultiFileInputComponent implements OnInit {
     this.control = this.controlContainer.control?.get(this.controlName);
   }
 
+  removeAllFiles() {
+    for (let i = 0; i < this.selectedFileArray.length; i++) {
+      this.selectedFileArray.splice(i);
+    }
+  }
+
+  removeFile(fileName: string) {
+    for (let i = 0; i < this.selectedFileArray.length; i++) {
+      if (this.selectedFileArray[i].name == fileName) {
+        this.selectedFileArray.splice(i, 1);
+      }
+    }
+  }
+
   triggerFileSelect(event: any) {
     this.triggerFileSelectFunc(event);
   }

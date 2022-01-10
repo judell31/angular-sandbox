@@ -75,6 +75,24 @@
   transition: 0.5s;
 }
 
+.reset-icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.max-upload-size {
+  display: flex;
+}
+
+.reset-icon {
+  color: #3f92ff;
+  margin-left: 0.5rem;
+}
+
+.reset-icon:hover {
+  cursor: pointer;
+}
+
 .upload-file-icon {
   width: 5%;
   font-size: 3rem;
