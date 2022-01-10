@@ -16,7 +16,7 @@
         <lazy-single-file-input
           [controlName]="'singleFile'"
           [name]="'Upload a file'"
-          [fileType]="'application/pdf'"
+          [fileType]="'application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'"
           [style]="'upload-button'"
           [maxFileSize]="sixteenMb"
           [maxSizeDescription]="'Max file size 16MB'"
@@ -25,7 +25,7 @@
         <lazy-multi-file-input
           [controlName]="'multiFile'"
           [name]="'Upload files'"
-          [fileType]="'application/pdf, text/plain'"
+          [fileType]="'application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'"
           [style]="'upload-button'"
           [triggerFileSelectFunc]="onFileSelect"
           [selectedFileArray]="selectedFileArray"
