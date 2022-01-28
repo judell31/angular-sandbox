@@ -5,8 +5,8 @@
 //Components
 export * from './lib/components/buttons/lazy-button/lazy-button.component';
 export * from './lib/components/inputs/lazy-input/lazy-input.component';
-export * from './lib/components/inputs/lazy-single-file-input/lazy-single-file-input.component';
-export * from './lib/components/inputs/lazy-multi-file-input/lazy-multi-file-input.component';
+// export * from './lib/components/inputs/lazy-single-file-input/lazy-single-file-input.component';
+// export * from './lib/components/inputs/lazy-multi-file-input/lazy-multi-file-input.component';
 export * from './lib/components/inputs/lazy-drop-down/lazy-drop-down.component';
 export * from './lib/components/inputs/lazy-number-input/lazy-number-input.component';
 export * from './lib/components/buttons/lazy-back-stepper-button/lazy-back-stepper-button.component';
