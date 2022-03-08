@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {FormSubmittedComponent} from "../../dialogs/success/form-submitted/form-submitted.component";
+import {HttpClient} from "@angular/common/http";
+import {fn} from "@angular/compiler/src/output/output_ast";
 
 @Component({
   selector: 'home-page',
@@ -13,6 +15,7 @@ export class HomeComponent implements OnInit {
   isLinear = true;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  filesArrayForm: FormGroup;
   dropDownOptions: any[];
   sixteenMb: number = 16777216;
   selectedFiles: FileList;
@@ -22,12 +25,18 @@ export class HomeComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private dialog: MatDialog,
+    private http: HttpClient
   ) { }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      console.log("5s delay")
+    }, 5000);
+
     this.inputForm();
     this.firstGroupForm();
     this.secondGroupForm();
+    this.filesFrom();
 
     this.dropDownOptions = [
       {
@@ -48,8 +57,18 @@ export class HomeComponent implements OnInit {
       phoneNumber: new FormControl(''),
       dropDown: new FormControl(''),
       singleFile: new FormControl(''),
-      multiFile: new FormControl(this.selectedFileArray),
+      multiFile: new FormControl(''),
     });
+  }
+
+  filesFrom() {
+    this.filesArrayForm = this.fb.group({
+      files: this.fb.array([])
+    })
+  }
+
+  createItem(data: any): FormGroup {
+    return this.fb.group(data);
   }
 
   firstGroupForm() {
@@ -77,16 +96,40 @@ export class HomeComponent implements OnInit {
     this.inputFormGroup.reset();
   }
 
+  get files(): FormArray {
+    // console.log(this.filesArrayForm.value);
+    return this.filesArrayForm.get('files') as FormArray;
+  };
+
   log() {
-    console.log(this.inputFormGroup.value);
-    console.log(this.selectedFileArray);
+    // console.log(this.inputFormGroup.value);
+    // console.log(this.selectedFileArray);
+    // console.log(this.inputFormGroup.value);
+    console.log(this.filesArrayForm.value);
+
+    const fd = new FormData();
+
+    for (let f of this.filesArrayForm.value.files) {
+      // console.log(this.filesArrayForm.value.files);
+      // console.log(f.file)
+      fd.append("specFiles", f.file)
+    }
+
+    this.http.post("http://localhost:8081/all-pallets-inc/quote", fd)
+      .subscribe();
+
+    this.filesArrayForm.reset();
   }
 
   onFileSelect(event: any) {
     this.selectedFiles = <FileList>event.target.files;
 
-    for (let i = 0; i < this.selectedFiles.length; i++) {
-      this.selectedFileArray.push(this.selectedFiles[i]);
+    // for (let i = 0; i < this.selectedFiles.length; i++) {
+    for (let file of event.target.files) {
+      this.files.push(
+        this.createItem({file})
+      )
+      // this.selectedFileArray.push(this.selectedFiles[i]);
     }
   }
 

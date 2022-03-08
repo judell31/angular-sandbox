@@ -17,6 +17,7 @@ import {AboutComponent} from './components/about/about.component';
 import {NavMenu} from "./models/navMenu";
 import {ContactComponent} from './components/contact/contact.component';
 import {LazyUiModule} from "projects/lazy-ui/src/lib/lazy-ui.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {LazyUiModule} from "projects/lazy-ui/src/lib/lazy-ui.module";
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     LazyUiModule,

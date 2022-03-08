@@ -80,6 +80,41 @@
   </form>
 </div>
 
+<!--<form [formGroup]="filesArrayForm">-->
+<!--  <lazy-multi-file-input-->
+<!--    [controlName]="'files'"-->
+<!--    [name]="'Upload files'"-->
+<!--    [fileType]="'application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'"-->
+<!--    [style]="'upload-button'"-->
+<!--    [triggerFileSelectFunc]="onFileSelect"-->
+<!--    [selectedFileArray]="selectedFileArray"-->
+<!--    [maxFileSize]="sixteenMb"-->
+<!--    [maxFiles]="10"-->
+<!--    [maxSizeDescription]="'Max file size 16MB'"-->
+<!--    [matIcon]="'file_upload'"-->
+<!--  ></lazy-multi-file-input>-->
+<!--</form>-->
+
+<form [formGroup]="filesArrayForm">
+
+  <div class="form-group">
+    <input type="file" class="custom-file-input form-control" id="files" multiple (change)="onFileSelect($event)" accept="image/x-png,image/jpeg">
+  </div>
+
+<!--  <div class="images-preview mt-2" *ngIf="photos.length">-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-6 col-lg-3	 col-xl-2" formArrayName="photos" *ngFor="let photo of photos.controls; let i = index;">-->
+<!--        <div class="card mb-3" [formGroupName]="i">-->
+<!--          <button type="button" (click)="removePhoto(i)" class="btn btn-danger remove-btn">x</button>-->
+<!--          <img [src]="photo.controls.url.value" class="card-img-top" alt="Image Preview">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+  <button (click)="log()" class="btn btn-primary" type="button">Submit</button>
+</form>
+
 <!--<div>-->
 <!--  <div class="section">-->
 <!--    <h3>Material Form</h3>-->
