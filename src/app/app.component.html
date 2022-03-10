@@ -1,14 +1,18 @@
-<!--<app-nav (sideNavToggle)="sidenav.toggle()"></app-nav>-->
-<mat-sidenav-container>
-  <mat-sidenav position="end" #sidenav role="navigation">
-    <app-sidenav (closeSideNav)="sidenav.close()"></app-sidenav>
-  </mat-sidenav>
-<!--  Works without mat sidenav content tag-->
-  <mat-sidenav-content>
-    <app-nav (sideNavToggle)="sidenav.toggle()"></app-nav>
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-    <app-footer></app-footer>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<!--<mat-sidenav-container>-->
+<!--  <mat-sidenav position="end" #sidenav role="navigation">-->
+<!--    <app-sidenav (closeSideNav)="sidenav.close()"></app-sidenav>-->
+<!--  </mat-sidenav>-->
+<!--  <mat-sidenav-content>-->
+<!--    <app-nav (sideNavToggle)="sidenav.toggle()"></app-nav>-->
+<!--    <main>-->
+<!--      <router-outlet></router-outlet>-->
+<!--    </main>-->
+<!--    <app-footer></app-footer>-->
+<!--  </mat-sidenav-content>-->
+<!--</mat-sidenav-container>-->
+<app-nav></app-nav>
+<app-sidenav></app-sidenav>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<app-footer></app-footer>

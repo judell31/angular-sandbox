@@ -12,14 +12,12 @@
         </a>
       </ng-container>
     </div>
-    <div fxHide.gt-xs class="sidenav-button-container">
-      <div class="sidenav-button">
-        <button (click)="onToggleSidenav()" class="sidenav-button" mat-icon-button>
-          <mat-icon>
-            menu
-          </mat-icon>
-        </button>
-      </div>
+    <div fxHide.gt-xs class="sidenav-button">
+      <button class="sidenav-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <mat-icon>
+          menu
+        </mat-icon>
+      </button>
     </div>
   </div>
 </div>

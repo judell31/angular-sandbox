@@ -4,10 +4,15 @@
   background-color: $ngsbBlue2;
 }
 
-.icon.active {
-  color: white;
-}
+//.icon.active {
+//  color: white;
+//}
 
-.nav-caption.active {
-  color: white;
+//.nav-caption.active {
+//  color: white;
+//}
+
+.offcanvas.show {
+  width: 50%;
+  background: $ngsbBlue;
 }

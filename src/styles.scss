@@ -28,17 +28,6 @@ body {
   margin: 0;
 }
 
-//ngsb Button
-button {
-  background-color: $ngsbBlue2;
-  border: none;
-  font-size: 1rem;
-  padding: 10px;
-  color: $ngsbWhite;
-  font-weight: bold;
-  border-radius: 5px;
-}
-
 button:hover {
   cursor: pointer;
 }
