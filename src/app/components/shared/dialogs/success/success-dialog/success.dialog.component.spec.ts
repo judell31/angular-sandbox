@@ -1,20 +1,20 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {LazyUiComponent} from './lazy-ui.component';
+import {SuccessDialogComponent} from './success.dialog.component';
 
-describe('LazyUiComponent', () => {
-  let component: LazyUiComponent;
-  let fixture: ComponentFixture<LazyUiComponent>;
+describe('FormSubmittedComponent', () => {
+  let component: SuccessDialogComponent;
+  let fixture: ComponentFixture<SuccessDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LazyUiComponent ]
+      declarations: [ SuccessDialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LazyUiComponent);
+    fixture = TestBed.createComponent(SuccessDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

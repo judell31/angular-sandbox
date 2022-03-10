@@ -6,30 +6,24 @@ import {AppComponent} from './app.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MaterialModule} from "./material.module";
 import {NavComponent} from './components/nav/nav.component';
-import {InvalidFormComponent} from './dialogs/errors/invalid-form/invalid-form.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {HomeComponent} from './components/home/home.component';
-import {SidenavComponent} from './components/sidenav/sidenav.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {FormSubmittedComponent} from './dialogs/success/form-submitted/form-submitted.component';
+import {SuccessDialogComponent} from './components/shared/dialogs/success/success-dialog/success.dialog.component';
 import {AboutComponent} from './components/about/about.component';
 import {NavMenu} from "./models/navMenu";
-import {ContactComponent} from './components/contact/contact.component';
-import {LazyUiModule} from "projects/lazy-ui/src/lib/lazy-ui.module";
 import {HttpClientModule} from "@angular/common/http";
+import {LazyUiModule} from "@jaytech/lazy-ui";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    InvalidFormComponent,
     FooterComponent,
     HomeComponent,
-    SidenavComponent,
-    FormSubmittedComponent,
+    SuccessDialogComponent,
     AboutComponent,
-    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,8 +33,8 @@ import {HttpClientModule} from "@angular/common/http";
     HttpClientModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    LazyUiModule,
     MaterialModule,
+    LazyUiModule
   ],
   providers: [NavMenu],
   bootstrap: [AppComponent]

@@ -15,24 +15,14 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.navMenu.navItems = [
       {
-        text: "Home",
-        link: "/home",
-        icon: "home"
+        text: "Angular Material Form",
+        link: "/ng-material",
+        icon: "description"
       },
       {
-        text: "About",
-        link: "/about",
-        icon: "info"
-      },
-      {
-        text: "Contact",
-        link: "/contact",
-        icon: "person"
-      },
-      {
-        text: "Logout",
-        link: "/logout",
-        icon: "logout"
+        text: "Bootstrap Grid",
+        link: "/bootstrap-grid",
+        icon: "grid_view"
       }
     ];
   }

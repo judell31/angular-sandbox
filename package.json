@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
-    "start:mobile": "ng serve --open --host 192.168.0.215 --disable-host-check",
+    "start:mobile": "ng serve --open --host <0.0.0.0> --disable-host-check",
     "build": "ng build",
     "lazyUi": "npm i && ng build lazy-ui && cd dist/lazy-ui && npm publish --access public",
     "watch": "ng build --watch --configuration development",
@@ -28,6 +28,7 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@jaytech/lazy-ui": "^1.3.0",
     "asar": "^3.1.0",
     "bootstrap": "^5.1.3",
     "rxjs": "~6.6.0",

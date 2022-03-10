@@ -21,36 +21,13 @@ mat-grid-tile {
   width: 30rem;
 }
 
-.disabled {
-  background-color: $ngsbGrey;
-}
-
-.mat-stepper-vertical {
-  background-color: $ngsbOffWhite;
-}
-
 button:hover {
   cursor: pointer;
 }
 
-.mat-stepper-vertical {
-  margin-top: 1rem;
-}
 .ngsb-buttons {
   display: flex;
   justify-content: flex-end;
-}
-
-.stepper-btn {
-  margin-top: 1rem;
-}
-
-.stepper-reset-btn {
-  margin-left: 1rem;
-}
-
-lazy-back-stepper-button {
-  margin-left: 1rem;
 }
 
 .mat-form-field {

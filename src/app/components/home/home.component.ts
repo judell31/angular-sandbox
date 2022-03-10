@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
-import {FormSubmittedComponent} from "../../dialogs/success/form-submitted/form-submitted.component";
+import {SuccessDialogComponent} from "../shared/dialogs/success/success-dialog/success.dialog.component";
 
 @Component({
   selector: 'home-page',
@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
   submitStepperForm() {
     console.log(this.firstFormGroup.value);
     console.log(this.secondFormGroup.value);
-    this.dialog.open(FormSubmittedComponent);
+    this.dialog.open(SuccessDialogComponent);
     this.secondFormGroup.reset();
     this.firstFormGroup.reset();
   }
@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit {
 
   send(){
     console.log(this.inputFormGroup.value);
-    this.dialog.open(FormSubmittedComponent);
+    this.dialog.open(SuccessDialogComponent);
     this.reset();
   }
 }

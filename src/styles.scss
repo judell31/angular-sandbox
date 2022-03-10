@@ -1,25 +1,11 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-$ngsbPrimary: #9620db;
-$ngsbPrimary2: #6a0778;
-$ngsbSecondary: #ffa300;
-$ngsbOrange: #f5deb3ff;
 $ngsbWhite: #ffffff;
-$ngsbOffWhite: #e0e0e0;
 $ngsbBlack: #000000;
-$ngsbBlack2: #1b1b1e;
-$ngsbGrey: #5b5b65;
-$ngsbGrey2: #5A5A5A;
-$ngsbLightGrey: #AFAFAFFF;
-$ngsbGrey3: #3f3d56;
-$ngsbGrey4: #67658f;
-$ngsbValid: #a6d555;
-$ngsbError: #ff0600;
-$ngsbAccentRed: #ff6584;
-$ngsbAccentGreen: #92ce2a;
+$ngsbRed: #ff0600;
+$ngsbLightRed: #ff6584;
 $ngsbBlue: #3f92ff;
 $ngsbBlue2: #4285f4;
-$ngsbFooterLinks: #9B51E0;
 
 html,
 body {
@@ -34,7 +20,7 @@ button:hover {
 
 //Input Field Styles
 .mat-form-field-required-marker {
-  color: $ngsbAccentRed !important;
+  color: $ngsbLightRed !important;
 }
 
 .mat-form-field.mat-focused .mat-form-field-ripple {

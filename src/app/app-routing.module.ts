@@ -2,14 +2,12 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
 import {AboutComponent} from "./components/about/about.component";
-import {ContactComponent} from "./components/contact/contact.component";
 import {Guard} from "./services/guard";
 
 const routes: Routes = [
-  {path: "", redirectTo: "home", pathMatch: "full"},
-  { path: 'home', pathMatch: 'full', component: HomeComponent},
-  { path: 'about', pathMatch: 'full', component: AboutComponent },
-  { path: 'contact', pathMatch: 'full', component: ContactComponent },
+  {path: "", redirectTo: "ng-material", pathMatch: "full"},
+  { path: 'ng-material', pathMatch: 'full', component: HomeComponent},
+  { path: 'bootstrap-grid', pathMatch: 'full', component: AboutComponent },
 ];
 
 @NgModule({

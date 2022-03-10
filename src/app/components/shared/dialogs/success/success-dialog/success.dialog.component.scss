@@ -1,0 +1,11 @@
+@import "../../../../../../styles";
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.close-dialog {
+  background-color: $ngsbBlue;
+  color: white;
+}
