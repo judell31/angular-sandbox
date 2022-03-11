@@ -1,0 +1,19 @@
+@import "src/styles";
+.sidenav-item.active {
+  background-color: $ngsbBlue2;
+  color: $ngsbWhite;
+}
+
+.sidenav-item-content {
+  margin-left: 1rem;
+  display: flex;
+}
+
+li {
+  list-style: none;
+  padding: 0.4rem;
+}
+
+ul {
+  padding: 0;
+}

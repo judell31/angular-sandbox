@@ -1,17 +1,13 @@
-<!-- Todo: fix sidenav close animation - On close it  -->
-<div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvas">
   <div class="offcanvas-body">
     <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div class="dropdown mt-3">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      <ul *ngFor="let navItem of navItems">
+        <li class="sidenav-item" routerLinkActive="active" [routerLink]="navItem.link">
+          <div class="sidenav-item-content">
+            <mat-icon class="icon">{{navItem.icon}}</mat-icon>
+            <span class="nav-caption">{{navItem.text}}</span>
+          </div>
+        </li>
       </ul>
     </div>
   </div>

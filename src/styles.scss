@@ -19,13 +19,17 @@ button:hover {
 }
 
 //Bootstrap Offcanvas
-//.offcanvas.show {
-//  width: 50%;
-//}
-//
-//.offcanvas {
-//  max-width: 50% !important;
-//}
+.offcanvas.show {
+  width: 50%;
+}
+
+.offcanvas {
+  max-width: 50% !important;
+}
+
+.offcanvas-body {
+  padding: 1rem 0;
+}
 
 //Overrides Bootstraps reduce motion media query
 @media (prefers-reduced-motion: reduce) {

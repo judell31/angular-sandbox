@@ -15,12 +15,12 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.navMenu.navItems = [
       {
-        text: "Angular Material Form",
+        text: "NGM Form",
         link: "/ng-material",
         icon: "description"
       },
       {
-        text: "Bootstrap Grid",
+        text: "BS Grid",
         link: "/bootstrap-grid",
         icon: "grid_view"
       }
