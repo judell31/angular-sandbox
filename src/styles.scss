@@ -18,6 +18,22 @@ button:hover {
   cursor: pointer;
 }
 
+//Bootstrap Offcanvas
+//.offcanvas.show {
+//  width: 50%;
+//}
+//
+//.offcanvas {
+//  max-width: 50% !important;
+//}
+
+//Overrides Bootstraps reduce motion media query
+@media (prefers-reduced-motion: reduce) {
+  .offcanvas {
+    transition: transform 0.3s ease-in-out !important;
+  }
+}
+
 //Input Field Styles
 .mat-form-field-required-marker {
   color: $ngsbLightRed !important;

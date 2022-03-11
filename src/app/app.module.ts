@@ -15,6 +15,7 @@ import {AboutComponent} from './components/about/about.component';
 import {NavMenu} from "./models/navMenu";
 import {HttpClientModule} from "@angular/common/http";
 import {LazyUiModule} from "@jaytech/lazy-ui";
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {LazyUiModule} from "@jaytech/lazy-ui";
     HomeComponent,
     SuccessDialogComponent,
     AboutComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,
