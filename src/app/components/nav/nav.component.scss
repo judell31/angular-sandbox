@@ -9,6 +9,7 @@
 .sidenav-btn {
   background: none;
   border: none;
+  display: flex;
 }
 
 .brand-name:hover {
@@ -69,4 +70,10 @@ a {
 .nav-item {
   padding: 20px;
   margin-left: 1rem;
+}
+
+@media (max-width: 600px) {
+  .nav-container {
+    padding: 0.5rem;
+  }
 }

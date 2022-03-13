@@ -31,6 +31,10 @@ button:hover {
   padding: 1rem 0;
 }
 
+.offcanvas-backdrop {
+  height: 100% !important;
+}
+
 //Overrides Bootstraps reduce motion media query
 @media (prefers-reduced-motion: reduce) {
   .offcanvas {
