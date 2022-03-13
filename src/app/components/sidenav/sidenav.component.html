@@ -1,8 +1,8 @@
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvas">
+<div class="offcanvas offcanvas-end" data-bs-scroll="false" data-bs-backdrop="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvas">
   <div class="offcanvas-body">
     <div>
       <ul *ngFor="let navItem of navItems">
-        <li class="sidenav-item" routerLinkActive="active" [routerLink]="navItem.link">
+        <li (click)="hideSideNav()" class="sidenav-item" routerLinkActive="active" [routerLink]="navItem.link">
           <div class="sidenav-item-content">
             <mat-icon class="icon">{{navItem.icon}}</mat-icon>
             <span class="nav-caption">{{navItem.text}}</span>
