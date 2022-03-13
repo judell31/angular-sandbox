@@ -24,7 +24,7 @@ export class SidenavComponent implements OnInit {
     setTimeout(() => {
       document.getElementById("offcanvas")!
         .setAttribute("style", "visibility:hidden;");
-    }, 100);
+    }, 500);
 
     document.getElementsByClassName("offcanvas-backdrop")[0].remove();
 
