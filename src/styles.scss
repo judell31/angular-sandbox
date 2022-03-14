@@ -10,7 +10,6 @@ $ngsbBlue2: #4285f4;
 html,
 body {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  height: 100%;
   margin: 0;
 }
 
@@ -29,10 +28,6 @@ button:hover {
 
 .offcanvas-body {
   padding: 1rem 0;
-}
-
-.offcanvas-backdrop {
-  height: 100% !important;
 }
 
 //Overrides Bootstraps reduce motion media query
@@ -62,8 +57,4 @@ button:hover {
 .mat-form-field {
   font-size: 1rem !important;
   width: 100% !important;
-}
-
-.file-upload {
-  margin-top: 2rem !important;
 }

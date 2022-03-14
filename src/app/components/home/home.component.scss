@@ -34,6 +34,16 @@ button:hover {
   margin-top: 1rem;
 }
 
-.primary-btn {
+.reset-btn {
   margin-left: 1rem;
+}
+
+@media (max-width: 500px) {
+  .ngsb-buttons {
+    flex-flow: column;
+  }
+
+  .reset-btn {
+    margin: 1rem 0;
+  }
 }

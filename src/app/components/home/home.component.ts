@@ -10,7 +10,6 @@ import {SuccessDialogComponent} from "../shared/dialogs/success/success-dialog/s
 })
 export class HomeComponent implements OnInit {
   inputFormGroup: FormGroup;
-  isLinear = true;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   dropDownOptions: any[];
@@ -60,14 +59,6 @@ export class HomeComponent implements OnInit {
     this.secondFormGroup = this.fb.group({
       secondCtrl: new FormControl(''),
     })
-  }
-
-  submitStepperForm() {
-    console.log(this.firstFormGroup.value);
-    console.log(this.secondFormGroup.value);
-    this.dialog.open(SuccessDialogComponent);
-    this.secondFormGroup.reset();
-    this.firstFormGroup.reset();
   }
 
   reset() {
