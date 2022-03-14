@@ -8,17 +8,12 @@ import {NavMenu} from "../../models/navMenu";
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  @Output() sideNavToggle = new EventEmitter<void>();
-
   navItems: NavItem[];
+  open: boolean = true;
 
   constructor(public navMenu: NavMenu) { }
 
   ngOnInit(): void {
     this.navItems = this.navMenu.navItems;
-  }
-
-  onToggleSidenav() {
-    this.sideNavToggle.emit();
   }
 }
