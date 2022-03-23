@@ -37,7 +37,13 @@ button:hover {
   }
 }
 
-//Input Field Styles
+//Accordion
+//Overrides Bootstraps reduce motion media query
+.accordion-collapse {
+  transition: .15s ease !important;
+}
+
+//Angular Material Input Field Styles
 .mat-form-field-required-marker {
   color: $ngsbLightRed !important;
 }
